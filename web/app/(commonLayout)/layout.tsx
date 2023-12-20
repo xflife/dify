@@ -3,8 +3,9 @@ import type { ReactNode } from 'react'
 import SwrInitor from '@/app/components/swr-initor'
 import { AppContextProvider } from '@/context/app-context'
 import GA, { GaType } from '@/app/components/base/ga'
-import HeaderWrapper from '@/app/components/header/HeaderWrapper'
-import Header from '@/app/components/header'
+// import HeaderWrapper from '@/app/components/header/HeaderWrapper'
+// import Header from '@/app/components/header'
+import BasicWrapper from '@/app/components/basic-sidebar/wrapper'
 import { EventEmitterContextProvider } from '@/context/event-emitter'
 import { ProviderContextProvider } from '@/context/provider-context'
 import { ModalContextProvider } from '@/context/modal-context'
@@ -18,10 +19,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <EventEmitterContextProvider>
             <ProviderContextProvider>
               <ModalContextProvider>
-                <HeaderWrapper>
-                  <Header />
-                </HeaderWrapper>
-                {children}
+                {/* <HeaderWrapper> */}
+                {/* <Header /> */}
+                {/* </HeaderWrapper> */}
+                <BasicWrapper>
+                  {children}
+                </BasicWrapper>
               </ModalContextProvider>
             </ProviderContextProvider>
           </EventEmitterContextProvider>
@@ -32,7 +35,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 }
 
 export const metadata = {
-  title: 'Dify',
+  title: 'iPollo.AI',
 }
 
 export default Layout

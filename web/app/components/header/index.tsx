@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { useBoolean, useClickAway } from 'ahooks'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { Bars3Icon } from '@heroicons/react/20/solid'
@@ -10,10 +10,10 @@ import AppNav from './app-nav'
 import DatasetNav from './dataset-nav'
 // import EnvNav from './env-nav'
 import ExploreNav from './explore-nav'
-import GithubStar from './github-star'
+// import GithubStar from './github-star'
 import { WorkspaceProvider } from '@/context/workspace-context'
 import { useAppContext } from '@/context/app-context'
-import LogoSite from '@/app/components/base/logo/logo-site'
+// import LogoSite from '@/app/components/base/logo/logo-site'
 import PlanComp from '@/app/components/billing/plan'
 import useBreakpoints, { MediaType } from '@/hooks/use-breakpoints'
 import { useProviderContext } from '@/context/provider-context'
@@ -51,21 +51,21 @@ const Header = () => {
         >
           <Bars3Icon className="w-4 h-4 text-gray-500" />
         </div>}
-        {!isMobile && <>
+        {/* {!isMobile && <>
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite />
           </Link>
           <GithubStar />
-        </>}
+        </>} */}
       </div>
-      {isMobile && (
+      {/* {isMobile && (
         <div className='flex'>
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite />
           </Link>
           <GithubStar />
         </div>
-      )}
+      )} */}
       {!isMobile && (
         <div className='flex items-center'>
           <ExploreNav className={navClassName} />
