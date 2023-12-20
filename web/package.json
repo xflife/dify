@@ -3,7 +3,7 @@
   "version": "0.3.34",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 7979",
     "build": "next build",
     "start": "cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public && cross-env PORT=$npm_config_port HOSTNAME=$npm_config_host node .next/standalone/server.js",
     "lint": "next lint",
@@ -86,7 +86,7 @@
     "@types/js-cookie": "^3.0.3",
     "@types/lodash-es": "^4.17.7",
     "@types/negotiator": "^0.6.1",
-    "@types/node": "18.15.0",
+    "@types/node": "^20.10.5",
     "@types/qs": "^6.9.7",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",

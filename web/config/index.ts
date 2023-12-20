@@ -21,8 +21,8 @@ else if (
 }
 else {
   if (isDevelopment) {
-    apiPrefix = 'https://cloud.dify.dev/console/api'
-    publicApiPrefix = 'https://dev.udify.app/api'
+    apiPrefix = 'https://gpt.metaio.cc/console/api'
+    publicApiPrefix = 'https://gpt.metaio.cc/api'
   }
   else {
     // const domainParts = globalThis.location?.host?.split('.');
@@ -37,7 +37,7 @@ export const API_PREFIX: string = apiPrefix
 export const PUBLIC_API_PREFIX: string = publicApiPrefix
 
 const EDITION = process.env.NEXT_PUBLIC_EDITION || globalThis.document?.body?.getAttribute('data-public-edition')
-export const IS_CE_EDITION = EDITION === 'SELF_HOSTED'
+export const IS_CE_EDITION = EDITION !== 'SELF_HOSTED'
 
 export const MODEL_LIST = [
   { id: 'gpt-3.5-turbo', name: 'gpt-3.5-turbo', type: AppType.chat },
