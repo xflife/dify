@@ -5,14 +5,14 @@ import { useRouter } from 'next/navigation'
 import classNames from 'classnames'
 import useSWR from 'swr'
 import Link from 'next/link'
-import { useContext } from 'use-context-selector'
+// import { useContext } from 'use-context-selector'
 import Toast from '../components/base/toast'
 import style from './page.module.css'
 // import Tooltip from '@/app/components/base/tooltip/index'
 import { IS_CE_EDITION, apiPrefix } from '@/config'
 import Button from '@/app/components/base/button'
 import { login, oauth } from '@/service/common'
-import I18n from '@/context/i18n'
+// import I18n from '@/context/i18n'
 
 const validEmailReg = /^[\w\.-]+@([\w-]+\.)+[\w-]{2,}$/
 
@@ -66,7 +66,7 @@ function reducer(state: IState, action: IAction) {
 const NormalForm = () => {
   const { t } = useTranslation()
   const router = useRouter()
-  const { locale } = useContext(I18n)
+  // const { locale } = useContext(I18n)
 
   const [state, dispatch] = useReducer(reducer, {
     formValid: false,
@@ -263,7 +263,7 @@ const NormalForm = () => {
                   </div>
                 </div>
 
-                <div className='mb-2 mt-7'>
+                <div className='mb-2 mt-9'>
                   <Button
                     tabIndex={0}
                     type='primary'

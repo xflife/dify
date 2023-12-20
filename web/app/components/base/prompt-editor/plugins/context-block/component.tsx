@@ -5,7 +5,8 @@ import { useSelectOrDelete, useTrigger } from '../../hooks'
 import { UPDATE_DATASETS_EVENT_EMITTER } from '../../constants'
 import type { Dataset } from './index'
 import { DELETE_CONTEXT_BLOCK_COMMAND } from './index'
-import { File05, Folder } from '@/app/components/base/icons/src/vender/solid/files'
+import { Folder } from '@/app/components/base/icons/src/vender/solid/files'
+import TypeIcon from '@/app/components/app/configuration/dataset-config/type-icon'
 import { Plus } from '@/app/components/base/icons/src/vender/line/general'
 import {
   PortalToFollowElem,
@@ -42,7 +43,8 @@ const ContextBlockComponent: FC<ContextBlockComponentProps> = ({
       ${open ? 'bg-[#EBE9FE]' : 'bg-[#F4F3FF]'}
       ${isSelected && '!border-[#9B8AFB]'}
     `} ref={ref}>
-      <File05 className='mr-1 w-[14px] h-[14px]' />
+      {/* <File05 className='mr-1 w-[14px] h-[14px]' /> */}
+      <TypeIcon type="upload_file" size='md' hideBg />
       <div className='mr-1 text-xs font-medium'>{t('common.promptEditor.context.item.title')}</div>
       <PortalToFollowElem
         open={open}

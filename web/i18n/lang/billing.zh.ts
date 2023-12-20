@@ -30,7 +30,7 @@ const translation = {
     buildApps: '构建应用程序数',
     vectorSpace: '向量空间',
     vectorSpaceTooltip: '向量空间是 LLMs 理解您的数据所需的长期记忆系统。',
-    vectorSpaceBillingTooltip: '向量存储是将知识库向量化处理后为让 LLMs 理解数据而使用的长期记忆存储，1MB 大约能满足1.2 million character 的向量化后数据存储（以 OpenAI Embedding 模型估算，不同模型计算方式有差异）。在向量化过程中，实际的压缩或尺寸减小取决于内容的复杂性和冗余性。',
+    vectorSpaceBillingTooltip: '向量存储是将数据集向量化处理后为让 LLMs 理解数据而使用的长期记忆存储，1MB 大约能满足1.2 million character 的向量化后数据存储（以 OpenAI Embedding 模型估算，不同模型计算方式有差异）。在向量化过程中，实际的压缩或尺寸减小取决于内容的复杂性和冗余性。',
     documentProcessingPriority: '文档处理优先级',
     documentProcessingPriorityTip: '如需更高的文档处理优先级，请升级您的套餐',
     documentProcessingPriorityUpgrade: '以更快的速度、更高的精度处理更多的数据。',
@@ -67,7 +67,7 @@ const translation = {
       title: '标注回复数',
       tooltip: '标注回复功能通过人工编辑标注为应用提供了可定制的高质量问答回复能力',
     },
-    ragAPIRequestTooltip: '指单独调用 Dify 知识库数据处理能力的 API。',
+    ragAPIRequestTooltip: '指单独调用 Dify 数据集数据处理能力的 API。',
   },
   plans: {
     sandbox: {

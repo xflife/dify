@@ -1,6 +1,7 @@
 'use client'
 import type { FC } from 'react'
 import React from 'react'
+import copy from 'copy-to-clipboard'
 import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
 import { useContext } from 'use-context-selector'
@@ -11,6 +12,7 @@ import MessageTypeSelector from './message-type-selector'
 import ConfirmAddVar from './confirm-add-var'
 import type { PromptRole, PromptVariable } from '@/models/debug'
 import { HelpCircle, Trash03 } from '@/app/components/base/icons/src/vender/line/general'
+import { Clipboard, ClipboardCheck } from '@/app/components/base/icons/src/vender/line/files'
 import Tooltip from '@/app/components/base/tooltip'
 import PromptEditor from '@/app/components/base/prompt-editor'
 import ConfigContext from '@/context/debug-configuration'
@@ -31,7 +33,6 @@ type Props = {
   onDelete: () => void
   promptVariables: PromptVariable[]
   isContextMissing: boolean
-  ExtraOption?: any
   onHideContextMissingTip: () => void
 }
 
@@ -46,7 +47,6 @@ const AdvancedPromptInput: FC<Props> = ({
   promptVariables,
   isContextMissing,
   onHideContextMissingTip,
-  ExtraOption,
 }) => {
   const { t } = useTranslation()
 
@@ -154,10 +154,7 @@ const AdvancedPromptInput: FC<Props> = ({
             <div className={cn(s.boxHeader, 'flex justify-between items-center h-11 pt-2 pr-3 pb-1 pl-4 rounded-tl-xl rounded-tr-xl bg-white hover:shadow-xs')}>
               {isChatMode
                 ? (
-                  <>
-                    <MessageTypeSelector value={type} onChange={onTypeChange} />
-                    <ExtraOption />
-                  </>
+                  <MessageTypeSelector value={type} onChange={onTypeChange} />
                 )
                 : (
                   <div className='flex items-center space-x-1'>
@@ -176,7 +173,7 @@ const AdvancedPromptInput: FC<Props> = ({
                 {canDelete && (
                   <Trash03 onClick={onDelete} className='w-6 h-6 p-1 text-gray-500 cursor-pointer' />
                 )}
-                {/* {!isCopied
+                {!isCopied
                   ? (
                     <Clipboard className='w-6 h-6 p-1 text-gray-500 cursor-pointer' onClick={() => {
                       copy(value)
@@ -185,7 +182,7 @@ const AdvancedPromptInput: FC<Props> = ({
                   )
                   : (
                     <ClipboardCheck className='w-6 h-6 p-1 text-gray-500' />
-                  )} */}
+                  )}
               </div>
             </div>
           )}

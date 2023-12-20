@@ -3,7 +3,7 @@ import React from 'react'
 import Spinner from '../spinner'
 
 export type IButtonProps = {
-  type?: string
+  type?: 'primary' | 'warning' | 'nohover' | string
   className?: string
   disabled?: boolean
   loading?: boolean
@@ -28,6 +28,9 @@ const Button: FC<IButtonProps> = ({
       break
     case 'warning':
       style = (disabled || loading) ? 'bg-red-600/75 cursor-not-allowed text-white' : 'bg-red-600 hover:bg-red-600/75 hover:shadow-md cursor-pointer text-white hover:shadow-sm'
+      break
+    case 'nohover':
+      style = 'border-solid border border-gray-200 cursor-pointer text-gray-500'
       break
     default:
       style = disabled ? 'border-solid border border-[#F1F3F9] bg-gray-200 cursor-not-allowed text-gray-800' : 'border-solid border border-[#F1F3F9] cursor-pointer text-gray-500 hover:bg-white hover:shadow-sm hover:border-gray-300'

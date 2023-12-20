@@ -1,0 +1,198 @@
+.Plugin {
+    margin-bottom: 20px;
+}
+
+.PluginTitleLayout {
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.PluginTitle {
+    float: left;
+    color: #19243B;
+    font-family: PingFang SC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.PluginTitleEditor {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PluginTitleEditor img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.PluginTitleCertical {
+    margin: 0 8px;
+    height: 14px;
+    width: 2px;
+    background-color: #aaa;
+}
+
+.PluginPromptLayout {
+    color: #757C89;
+    font-family: PingFang SC;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.PluginTextArea {
+    resize: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    height: 58px;
+    margin-bottom: 10px;
+}
+
+.PluginListContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(40%, auto));
+    grid-gap: 10px;
+    width: var(--max-width);
+    max-width: 100%;
+}
+
+.PluginListItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: red;
+    height: 64px;
+    border-radius: 8px;
+    background: #FFF;
+    cursor: pointer;
+}
+
+.PluginListItem span {
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.PluginItemIcon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+}
+
+.PluginListItemPic {
+    margin-left: 17px;
+    width: 12px;
+    height: 12px;
+}
+
+.PluginMarket {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(40%, auto));
+    grid-gap: 10px;
+    width: var(--max-width);
+    max-width: 100%;
+}
+
+.PluginMarketItem {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 282px;
+    height: 64px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 9px 24px 0px rgba(90, 100, 120, 0.10);
+}
+
+.PluginMarketItemSelected {
+    border: 2px solid black;
+}
+
+.PluginMarketIcon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: black;
+    color: white;
+}
+
+.PluginMarketTitle {
+    color: var(--unnamed, #2B3449);
+    font-family: PingFang SC;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.PluginMarketDescribe {
+    color: #8891A3;
+    font-family: PingFang SC;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.PluginConfig {
+    margin-bottom: 24px;
+}
+
+.PluginConfigTitle {
+    color: #19243B;
+    font-family: PingFang SC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.PluginConfigLabel {
+    color: #19243B;
+    font-family: PingFang SC;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.PluginConfigContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.PluginConfigInput {
+    display: flex;
+    flex: 1;
+    padding: 8px;
+    align-items: center;
+    border-radius: 8px;
+    background: #F6F8FC;
+    margin-right: 10px;
+}
+
+.PluginConfigBtn {
+    border-radius: 10px;
+}

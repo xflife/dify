@@ -165,7 +165,7 @@ const ConfigVar: FC<IConfigVarProps> = ({ promptVariables, readonly, onPromptVar
     <Panel
       className="mt-4"
       headerIcon={
-        <VarIcon className='w-4 h-4 text-primary-500'/>
+        <VarIcon className='w-4 h-4 text-[#EC966D]'/>
       }
       title={
         <div className='flex items-center'>
@@ -202,7 +202,7 @@ const ConfigVar: FC<IConfigVarProps> = ({ promptVariables, readonly, onPromptVar
             </thead>
             <tbody className="text-gray-700">
               {promptVariables.map(({ key, name, type, required }, index) => (
-                <tr key={index} className="h-9 leading-9">
+                <tr key={index} className="leading-9 h-9">
                   <td className="w-[160px] border-b border-gray-100 pl-3">
                     <div className='flex items-center space-x-1'>
                       <IconTypeIcon type={type as IInputTypeIconProps['type']} className='text-gray-400' />
@@ -245,12 +245,12 @@ const ConfigVar: FC<IConfigVarProps> = ({ promptVariables, readonly, onPromptVar
                           <Switch defaultValue={!required} size='md' onChange={value => updatePromptVariable(key, 'required', !value)} />
                         </div>
                       </td>
-                      <td className='w-20  border-b border-gray-100'>
-                        <div className='flex h-full items-center space-x-1'>
-                          <div className='flex items-center justify-items-center w-6 h-6 text-gray-500 cursor-pointer' onClick={() => handleConfig(key)}>
+                      <td className='w-20 border-b border-gray-100'>
+                        <div className='flex items-center h-full space-x-1'>
+                          <div className='flex items-center w-6 h-6 text-gray-500 cursor-pointer justify-items-center' onClick={() => handleConfig(key)}>
                             <Cog8ToothIcon width={16} height={16} />
                           </div>
-                          <div className='flex items-center justify-items-center w-6 h-6 text-gray-500 cursor-pointer' onClick={() => handleRemoveVar(index)} >
+                          <div className='flex items-center w-6 h-6 text-gray-500 cursor-pointer justify-items-center' onClick={() => handleRemoveVar(index)} >
                             <TrashIcon width={16} height={16} />
                           </div>
                         </div>

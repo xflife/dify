@@ -80,9 +80,9 @@ const Tools = () => {
   }
 
   return (
-    <div className='mt-3 px-3 rounded-xl bg-gray-50'>
+    <div className='mt-3 px-3 rounded-xl bg-[#F1F3F9]'>
       <div className='flex items-center h-12'>
-        <div className='grow flex items-center'>
+        <div className='flex items-center grow'>
           <div
             className={`
               group flex items-center justify-center mr-1 w-6 h-6 rounded-md
@@ -117,7 +117,7 @@ const Tools = () => {
           )
         }
         <div
-          className='flex items-center h-7 px-3 text-xs font-medium text-gray-700 cursor-pointer'
+          className='flex items-center px-3 text-xs font-medium text-gray-700 cursor-pointer h-7'
           onClick={() => handleOpenExternalDataToolModal({}, -1)}
         >
           <Plus className='mr-[5px] w-3.5 h-3.5 ' />
@@ -133,7 +133,7 @@ const Tools = () => {
                   key={`${index}-${item.type}-${item.label}-${item.variable}`}
                   className='group flex items-center mb-1 last-of-type:mb-0 px-2.5 py-2 rounded-lg border-[0.5px] border-[#F1F3F9] bg-white shadow-xs'
                 >
-                  <div className='grow flex items-center'>
+                  <div className='flex items-center grow'>
                     <AppIcon size='large'
                       className='mr-2 !w-6 !h-6 rounded-md border-[0.5px] border-black/5'
                       icon={item.icon}
@@ -155,7 +155,7 @@ const Tools = () => {
                     </TooltipPlus>
                   </div>
                   <div
-                    className='hidden group-hover:flex items-center justify-center mr-1 w-6 h-6 hover:bg-black/5 rounded-md cursor-pointer'
+                    className='items-center justify-center hidden w-6 h-6 mr-1 rounded-md cursor-pointer group-hover:flex hover:bg-black/5'
                     onClick={() => handleOpenExternalDataToolModal(item, index)}
                   >
                     <Settings01 className='w-4 h-4 text-gray-500' />

@@ -8,7 +8,6 @@ import produce from 'immer'
 import { useBoolean, useGetState } from 'ahooks'
 import cn from 'classnames'
 import { clone, isEqual } from 'lodash-es'
-import { CodeBracketIcon } from '@heroicons/react/20/solid'
 import Button from '../../base/button'
 import Loading from '../../base/loading'
 import s from './style.module.css'
@@ -48,6 +47,7 @@ import I18n from '@/context/i18n'
 import { useModalContext } from '@/context/modal-context'
 import useBreakpoints, { MediaType } from '@/hooks/use-breakpoints'
 import Drawer from '@/app/components/base/drawer'
+import request from '@/service/request'
 
 type PublichConfig = {
   modelConfig: ModelConfig
@@ -557,6 +557,20 @@ const Configuration: FC = () => {
   const [showUseGPT4Confirm, setShowUseGPT4Confirm] = useState(false)
   const { locale } = useContext(I18n)
 
+  const [strategy, saveStrategy] = useState([])
+  const getStrategy = async () => {
+    const result = await request.post('/strategy/get', { appId })
+    if (result.data && result.data.code === 200 && result.data.data) {
+      setTimeout(() => {
+        const datas = JSON.parse(result.data.data.strategy)
+        saveStrategy(datas)
+      })
+    }
+  }
+  useEffect(() => {
+    getStrategy()
+  }, [])
+
   if (isLoading) {
     return <div className='flex items-center justify-center h-full'>
       <Loading type='area' />
@@ -627,13 +641,13 @@ const Configuration: FC = () => {
     }}
     >
       <>
-        <div className="flex flex-col h-full">
-          <div className='flex flex-wrap items-center justify-between px-6 py-3 shrink-0 gap-y-2'>
+        <div className="flex flex-col h-full bg-[#EBEEF4]">
+          {/* <div className='flex flex-wrap items-center justify-between px-6 py-3 shrink-0 gap-y-2'>
             <div className='flex items-end'>
               <div className={s.promptTitle}></div>
-              <div className='flex items-center h-[14px] space-x-1 text-xs'>
-                {/* modelModeType missing can not load template */}
-                {(!isAdvancedMode && modelModeType) && (
+              <div className='flex items-center h-[14px] space-x-1 text-xs'> */}
+          {/* modelModeType missing can not load template */}
+          {/* {(!isAdvancedMode && modelModeType) && (
                   <div
                     onClick={() => setPromptMode(PromptMode.advanced)}
                     className={'cursor-pointer text-indigo-600'}
@@ -654,12 +668,12 @@ const Configuration: FC = () => {
                       </div>
                     )}
                   </div>
-                )}
-              </div>
-            </div>
+                )} */}
+          {/* </div>
+            </div> */}
 
-            <div className='flex flex-wrap items-center gap-y-2 gap-x-2'>
-              {/* Model and Parameters */}
+          {/* Model and Parameters */}
+          {/* <div className='flex flex-wrap items-center gap-y-2 gap-x-2'>
               <ConfigModel
                 isAdvancedMode={isAdvancedMode}
                 mode={mode}
@@ -681,19 +695,87 @@ const Configuration: FC = () => {
                 </Button>
               )}
               <Button type='primary' onClick={() => handlePublish(false)} className={cn(cannotPublish && '!bg-primary-200 !cursor-not-allowed', 'shrink-0 w-[70px] !h-8 !text-[13px] font-medium')}>{t('appDebug.operation.applyConfig')}</Button>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           <div className='flex grow h-[200px]'>
-            <div className="w-full sm:w-1/2 shrink-0">
-              <Config />
-            </div>
-            {!isMobile && <div className="relative flex flex-col w-1/2 h-full px-6 py-4 overflow-y-auto border-t border-l grow bg-gray-50 rounded-tl-2xl" style={{ borderColor: 'rgba(0, 0, 0, 0.02)' }}>
-              <Debug
-                hasSetAPIKEY={hasSetAPIKEY}
-                onSetting={() => setShowAccountSettingModal({ payload: 'provider' })}
-                inputs={inputs}
+            <div className="w-full bg-white sm:w-1/2 shrink-0">
+              <Config
+                strategy={strategy}
+                saveStrategy={saveStrategy}
+                ExtraHeader={() =>
+                  <>
+                    <div className='flex flex-wrap items-center gap-y-2 gap-x-2 ml-[auto]'>
+                      {/* Model and Parameters */}
+                      <ConfigModel
+                        isAdvancedMode={isAdvancedMode}
+                        mode={mode}
+                        provider={modelConfig.provider as ProviderEnum}
+                        completionParams={completionParams}
+                        modelId={modelConfig.model_id}
+                        setModel={setModel}
+                        onCompletionParamsChange={(newParams: CompletionParams) => {
+                          setCompletionParams(newParams)
+                        }}
+                        disabled={!hasSetAPIKEY}
+                      />
+                    </div>
+                    <div className='flex justify-center items-center bg-[#19243B] rounded-3xl min-w-[168px] ml-[16px]'>
+                      <Button type="nohover" className="h-8 text-sm text-white border-0" onClick={() => setShowConfirm(true)}>{t('appDebug.operation.resetConfig')}</Button>
+                      <div className='mx-3 w-[1px] h-5 bg-gray-200'></div>
+                      <Button type="nohover" className="h-8 text-sm text-white border-0" onClick={() => handlePublish(false)}>{t('appDebug.operation.applyConfig')}</Button>
+                    </div>
+                  </>
+                }
+                ExtraSwitch={() =>
+                  <div className='flex flex-wrap items-center justify-between py-1 mb-2 shrink-0 gap-y-2'>
+                    <div className='flex items-end'>
+                      {/* <div className={s.promptTitle}></div> */}
+                      <div className='flex items-center h-[20px] space-x-1 text-xs'>
+                        <div className='flex items-center h-[20px] space-x-1 text-xs pr-2'>
+                          <img src="https://assets.metaio.cc/assets/difyassets/tsc.png" width={20} height={20} />
+                          <div
+                            className={'pl-1 h2 !text-base'}
+                          >
+                            {t('appDebug.promptMode.prefix')}
+                          </div>
+                        </div>
+                        {/* modelModeType missing can not load template */}
+                        {(!isAdvancedMode && modelModeType) && (
+                          <div
+                            onClick={() => setPromptMode(PromptMode.advanced)}
+                            className={'cursor-pointer text-sm text-[#C6954C]'}
+                          >
+                            {t('appDebug.promptMode.simple')}
+                          </div>
+                        )}
+                        {isAdvancedMode && (
+                          <div className='flex items-center space-x-2'>
+                            <div className={cn(locale === 'en' && 'italic', `${s.advancedPromptMode}  text-sm !text-[#C6954C]`)}>{t('appDebug.promptMode.advanced')}</div>
+                            {canReturnToSimpleMode && (
+                              <div
+                                onClick={() => setPromptMode(PromptMode.simple)}
+                                className='flex items-center h-6 py-3.5 px-2.5 space-x-1 border border-gray-200 rounded-2xl shadow-xs cursor-pointer text-sm !text-[#F4F4FB] bg-[#19243B]'
+                              >
+                                <FlipBackward className='w-4 h-4 text-white' />
+                                <div className='pl-1 text-sm uppercase'>{t('appDebug.promptMode.switchBack')}</div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>}
               />
-            </div>}
+            </div>
+            <div className="relative flex flex-col w-1/2 py-4 pl-2 pr-5">
+              {!isMobile && <div className="relative flex flex-col w-full h-full px-4 py-4 pb-2 overflow-y-auto bg-white border-t border-l grow bg-gray-50 rounded-tl-2xl rounded-2xl">
+                <Debug
+                  hasSetAPIKEY={hasSetAPIKEY}
+                  onSetting={() => setShowAccountSettingModal({ payload: 'provider' })}
+                  inputs={inputs}
+                />
+              </div>}
+            </div>
           </div>
         </div>
         {showConfirm && (

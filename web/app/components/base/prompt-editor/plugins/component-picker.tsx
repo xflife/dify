@@ -13,7 +13,7 @@ import { INSERT_CONTEXT_BLOCK_COMMAND } from './context-block'
 import { INSERT_VARIABLE_BLOCK_COMMAND } from './variable-block'
 import { INSERT_HISTORY_BLOCK_COMMAND } from './history-block'
 import { INSERT_QUERY_BLOCK_COMMAND } from './query-block'
-import { File05 } from '@/app/components/base/icons/src/vender/solid/files'
+import TypeIcon from '@/app/components/app/configuration/dataset-config/type-icon'
 import { Variable } from '@/app/components/base/icons/src/vender/line/development'
 import { MessageClockCircle } from '@/app/components/base/icons/src/vender/solid/general'
 import { UserEdit02 } from '@/app/components/base/icons/src/vender/solid/users'
@@ -75,7 +75,7 @@ const ComponentPickerMenuItem: FC<ComponentPickerMenuItemProps> = ({
       ref={option.setRefElement}
       onMouseEnter={onMouseEnter}
       onClick={onClick}>
-      <div className='flex items-center justify-center mr-2 w-8 h-8 rounded-lg border border-gray-100'>
+      <div className='flex items-center justify-center w-8 h-8 mr-2 border border-gray-100 rounded-lg'>
         {option.icon}
       </div>
       <div className='grow'>
@@ -117,7 +117,7 @@ const ComponentPicker: FC<ComponentPickerProps> = ({
       ? [
         new ComponentPickerOption(t('common.promptEditor.context.item.title'), {
           desc: t('common.promptEditor.context.item.desc'),
-          icon: <File05 className='w-4 h-4 text-[#6938EF]' />,
+          icon: <TypeIcon type="upload_file" />,
           onSelect: () => {
             if (contextDisabled)
               return
@@ -129,7 +129,7 @@ const ComponentPicker: FC<ComponentPickerProps> = ({
       : [],
     new ComponentPickerOption(t('common.promptEditor.variable.item.title'), {
       desc: t('common.promptEditor.variable.item.desc'),
-      icon: <Variable className='w-4 h-4 text-[#2970FF]' />,
+      icon: <Variable className='w-4 h-4 text-[#EC966D]' />,
       onSelect: () => {
         editor.dispatchCommand(INSERT_VARIABLE_BLOCK_COMMAND, undefined)
       },
