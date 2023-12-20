@@ -13,7 +13,7 @@ const translation = {
       response: '回复',
       answer: '答案',
       createdAt: '创建时间',
-      hits: '命中次数',
+      hits: '召回次数',
       actions: '操作',
       addAnnotation: '添加标注',
       bulkImport: '批量导入',
@@ -64,10 +64,10 @@ const translation = {
   },
   viewModal: {
     annotatedResponse: '标注回复',
-    hitHistory: '命中历史',
-    hit: '次命中',
-    hits: '次命中',
-    noHitHistory: '没有命中历史',
+    hitHistory: '召回历史',
+    hit: '次召回',
+    hits: '次召回',
+    noHitHistory: '没有召回历史',
   },
   hitHistoryTable: {
     question: '问题',

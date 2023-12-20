@@ -7,7 +7,7 @@ const AppList = async () => {
 }
 
 export const metadata = {
-  title: 'Datasets - Dify',
+  title: 'Datasets - iPollo.AI',
 }
 
 export default AppList
