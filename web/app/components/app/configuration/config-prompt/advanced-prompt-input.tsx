@@ -1,7 +1,6 @@
 'use client'
 import type { FC } from 'react'
 import React from 'react'
-import copy from 'copy-to-clipboard'
 import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
 import { useContext } from 'use-context-selector'
@@ -12,7 +11,6 @@ import MessageTypeSelector from './message-type-selector'
 import ConfirmAddVar from './confirm-add-var'
 import type { PromptRole, PromptVariable } from '@/models/debug'
 import { HelpCircle, Trash03 } from '@/app/components/base/icons/src/vender/line/general'
-import { Clipboard, ClipboardCheck } from '@/app/components/base/icons/src/vender/line/files'
 import Tooltip from '@/app/components/base/tooltip'
 import PromptEditor from '@/app/components/base/prompt-editor'
 import ConfigContext from '@/context/debug-configuration'
@@ -33,6 +31,7 @@ type Props = {
   onDelete: () => void
   promptVariables: PromptVariable[]
   isContextMissing: boolean
+  ExtraOption?: any
   onHideContextMissingTip: () => void
 }
 
@@ -47,6 +46,7 @@ const AdvancedPromptInput: FC<Props> = ({
   promptVariables,
   isContextMissing,
   onHideContextMissingTip,
+  ExtraOption,
 }) => {
   const { t } = useTranslation()
 
@@ -130,7 +130,7 @@ const AdvancedPromptInput: FC<Props> = ({
   const editorHeight = isChatMode ? 'h-[200px]' : 'h-[508px]'
   const contextMissing = (
     <div
-      className='flex justify-between items-center h-11 pt-2 pr-3 pb-1 pl-4 rounded-tl-xl rounded-tr-xl'
+      className='flex items-center justify-between pt-2 pb-1 pl-4 pr-3 h-11 rounded-tl-xl rounded-tr-xl'
       style={{
         background: 'linear-gradient(180deg, #FEF0C7 0%, rgba(254, 240, 199, 0) 100%)',
       }}
@@ -140,26 +140,29 @@ const AdvancedPromptInput: FC<Props> = ({
         <div className='leading-[18px] text-[13px] font-medium text-[#DC6803]'>{t('appDebug.promptMode.contextMissing')}</div>
       </div>
       <div
-        className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-[#F1F3F9] shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
+        className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-gray-200 shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
         onClick={onHideContextMissingTip}
       >{t('common.operation.ok')}</div>
     </div>
   )
   return (
     <div className={`relative ${!isContextMissing ? s.gradientBorder : s.warningBorder}`}>
-      <div className='rounded-xl bg-white'>
+      <div className='bg-white rounded-xl'>
         {isContextMissing
           ? contextMissing
           : (
             <div className={cn(s.boxHeader, 'flex justify-between items-center h-11 pt-2 pr-3 pb-1 pl-4 rounded-tl-xl rounded-tr-xl bg-white hover:shadow-xs')}>
               {isChatMode
                 ? (
-                  <MessageTypeSelector value={type} onChange={onTypeChange} />
+                  <>
+                    <MessageTypeSelector value={type} onChange={onTypeChange} />
+                    <ExtraOption />
+                  </>
                 )
                 : (
                   <div className='flex items-center space-x-1'>
 
-                    <div className='text-sm font-semibold uppercase text-indigo-800'>{t('appDebug.pageTitle.line1')}
+                    <div className='text-sm font-semibold text-indigo-800 uppercase'>{t('appDebug.pageTitle.line1')}
                     </div>
                     <Tooltip
                       htmlContent={<div className='w-[180px]'>
@@ -171,18 +174,18 @@ const AdvancedPromptInput: FC<Props> = ({
                   </div>)}
               <div className={cn(s.optionWrap, 'items-center space-x-1')}>
                 {canDelete && (
-                  <Trash03 onClick={onDelete} className='h-6 w-6 p-1 text-gray-500 cursor-pointer' />
+                  <Trash03 onClick={onDelete} className='w-6 h-6 p-1 text-gray-500 cursor-pointer' />
                 )}
-                {!isCopied
+                {/* {!isCopied
                   ? (
-                    <Clipboard className='h-6 w-6 p-1 text-gray-500 cursor-pointer' onClick={() => {
+                    <Clipboard className='w-6 h-6 p-1 text-gray-500 cursor-pointer' onClick={() => {
                       copy(value)
                       setIsCopied(true)
                     }} />
                   )
                   : (
-                    <ClipboardCheck className='h-6 w-6 p-1 text-gray-500' />
-                  )}
+                    <ClipboardCheck className='w-6 h-6 p-1 text-gray-500' />
+                  )} */}
               </div>
             </div>
           )}
@@ -231,7 +234,7 @@ const AdvancedPromptInput: FC<Props> = ({
             onBlur={handleBlur}
           />
         </div>
-        <div className='pl-4 pb-2 flex'>
+        <div className='flex pb-2 pl-4'>
           <div className="h-[18px] leading-[18px] px-1 rounded-md bg-gray-100 text-xs text-gray-500">{value.length}</div>
         </div>
       </div>

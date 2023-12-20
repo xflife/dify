@@ -350,8 +350,8 @@ const translation = {
     latestAvailable: 'Dify {{version}} 已是最新版本。',
   },
   appMenus: {
-    overview: '概览',
-    promptEng: '提示词编排',
+    overview: '浏览',
+    promptEng: '微调训练',
     apiAccess: '访问 API',
     logAndAnn: '日志与标注',
   },

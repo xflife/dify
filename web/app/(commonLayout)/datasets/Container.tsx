@@ -7,7 +7,7 @@ import useSWR from 'swr'
 
 // Components
 import Datasets from './Datasets'
-import DatasetFooter from './DatasetFooter'
+// import DatasetFooter from './DatasetFooter'
 import ApiServer from './ApiServer'
 import Doc from './Doc'
 import TabSlider from '@/app/components/base/tab-slider'
@@ -28,7 +28,7 @@ const Container = () => {
   const { data } = useSWR(activeTab === 'dataset' ? null : '/datasets/api-base-info', fetchDatasetApiBaseUrl)
 
   return (
-    <div ref={containerRef} className='grow relative flex flex-col bg-gray-100 overflow-y-auto'>
+    <div ref={containerRef} className='relative flex flex-col overflow-y-auto bg-gray-100 grow'>
       <div className='sticky top-0 flex justify-between pt-4 px-12 pb-2 leading-[56px] bg-gray-100 z-10 flex-wrap gap-y-2'>
         <TabSlider
           value={activeTab}
@@ -41,7 +41,8 @@ const Container = () => {
       {activeTab === 'dataset' && (
         <>
           <Datasets containerRef={containerRef} />
-          <DatasetFooter />
+          {/* <DatasetFooter /> */}
+          <div className='pb-6'></div>
         </>
       )}
 

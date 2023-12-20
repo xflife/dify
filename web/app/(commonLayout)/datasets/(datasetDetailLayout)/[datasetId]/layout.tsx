@@ -111,14 +111,14 @@ const ExtraInfo = ({ isMobile, relatedApps }: IExtraInfoProps) => {
     setShowTips(!isMobile)
   }, [isMobile, setShowTips])
 
-  return <div className='w-full flex flex-col items-center'>
+  return <div className='flex flex-col items-center w-full'>
     <Divider className='mt-5' />
     {(relatedApps?.data && relatedApps?.data?.length > 0) && (
       <>
         {!isMobile && <div className={s.subTitle}>{relatedApps?.total || '--'} {t('common.datasetMenus.relatedApp')}</div>}
         {isMobile && <div className={classNames(s.subTitle, 'flex items-center justify-center !px-0 gap-1')}>
           {relatedApps?.total || '--'}
-          <PaperClipIcon className='h-4 w-4 text-gray-700' />
+          <PaperClipIcon className='w-4 h-4 text-gray-700' />
         </div>}
         {relatedApps?.data?.map((item, index) => (<LikedItem key={index} isMobile={isMobile} detail={item} />))}
       </>
@@ -131,7 +131,7 @@ const ExtraInfo = ({ isMobile, relatedApps }: IExtraInfoProps) => {
         isMobile={isMobile}
         triggerElement={
           <div className={classNames('h-7 w-7 inline-flex justify-center items-center rounded-lg bg-transparent', isShowTips && '!bg-gray-50')}>
-            <QuestionMarkCircleIcon className='h-4 w-4 flex-shrink-0 text-gray-500' />
+            <QuestionMarkCircleIcon className='flex-shrink-0 w-4 h-4 text-gray-500' />
           </div>
         }
       >
@@ -144,9 +144,9 @@ const ExtraInfo = ({ isMobile, relatedApps }: IExtraInfoProps) => {
               <PuzzlePieceIcon className='w-3 h-3 text-gray-500' />
             </div>
           </div>
-          <div className='text-xs text-gray-500 mt-2'>{t('common.datasetMenus.emptyTip')}</div>
+          <div className='mt-2 text-xs text-gray-500'>{t('common.datasetMenus.emptyTip')}</div>
           <a
-            className='inline-flex items-center text-xs text-primary-600 mt-2 cursor-pointer'
+            className='inline-flex items-center mt-2 text-xs cursor-pointer text-primary-600'
             href={`https://docs.dify.ai/${locale === 'zh-Hans' ? 'v/zh-hans' : ''}/application/prompt-engineering`}
             target='_blank'
           >
@@ -190,7 +190,7 @@ const DatasetDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
 
   useEffect(() => {
     if (datasetRes)
-      document.title = `${datasetRes.name || 'Dataset'} - Dify`
+      document.title = `${datasetRes.name || 'Dataset'} - iPollo.AI`
   }, [datasetRes])
 
   if (!datasetRes && !error)
@@ -212,7 +212,7 @@ const DatasetDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
         dataset: datasetRes,
         mutateDatasetRes: () => mutateDatasetRes(),
       }}>
-        <div className="bg-white grow overflow-hidden">{children}</div>
+        <div className="overflow-hidden bg-white grow">{children}</div>
       </DatasetDetailContext.Provider>
     </div>
   )

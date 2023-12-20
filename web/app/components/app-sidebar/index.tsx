@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from './navLink'
-import type { NavIcon } from './navLink'
+// import type { NavIcon } from './navLink'
 import AppBasic from './basic'
 import useBreakpoints, { MediaType } from '@/hooks/use-breakpoints'
 
@@ -13,8 +13,8 @@ export type IAppDetailNavProps = {
   navigation: Array<{
     name: string
     href: string
-    icon: NavIcon
-    selectedIcon: NavIcon
+    icon: any
+    selectedIcon: any
   }>
   extraInfo?: React.ReactNode
 }
@@ -27,7 +27,7 @@ const AppDetailNav = ({ title, desc, icon, icon_background, navigation, extraInf
   return (
     <div className="flex flex-col sm:w-56 w-16 overflow-y-auto bg-white border-r border-[#F1F3F9] shrink-0 mobile:h-screen">
       <div className="flex flex-shrink-0 p-4">
-        <AppBasic mode={mode} iconType={iconType} icon={icon} icon_background={icon_background} name={title} type={desc} />
+        <AppBasic mode={mode} iconType={iconType} icon={icon} icon_background={icon_background} name={title} type={desc} noHeader />
       </div>
       <nav className="flex-1 p-4 space-y-1 bg-white">
         {navigation.map((item, index) => {

@@ -558,7 +558,7 @@ const Configuration: FC = () => {
   const { locale } = useContext(I18n)
 
   if (isLoading) {
-    return <div className='flex h-full items-center justify-center'>
+    return <div className='flex items-center justify-center h-full'>
       <Loading type='area' />
     </div>
   }
@@ -628,7 +628,7 @@ const Configuration: FC = () => {
     >
       <>
         <div className="flex flex-col h-full">
-          <div className='flex items-center justify-between px-6 shrink-0 py-3 flex-wrap gap-y-2'>
+          <div className='flex flex-wrap items-center justify-between px-6 py-3 shrink-0 gap-y-2'>
             <div className='flex items-end'>
               <div className={s.promptTitle}></div>
               <div className='flex items-center h-[14px] space-x-1 text-xs'>
@@ -647,7 +647,7 @@ const Configuration: FC = () => {
                     {canReturnToSimpleMode && (
                       <div
                         onClick={() => setPromptMode(PromptMode.simple)}
-                        className='flex items-center h-6 px-2 bg-indigo-600 shadow-xs border border-[#F1F3F9] rounded-lg text-white text-xs font-semibold cursor-pointer space-x-1'
+                        className='flex items-center h-6 px-2 space-x-1 text-xs font-semibold text-white bg-indigo-600 border border-gray-200 rounded-lg shadow-xs cursor-pointer'
                       >
                         <FlipBackward className='w-3 h-3 text-white' />
                         <div className='text-xs font-semibold uppercase'>{t('appDebug.promptMode.switchBack')}</div>
@@ -658,7 +658,7 @@ const Configuration: FC = () => {
               </div>
             </div>
 
-            <div className='flex items-center flex-wrap gap-y-2 gap-x-2'>
+            <div className='flex flex-wrap items-center gap-y-2 gap-x-2'>
               {/* Model and Parameters */}
               <ConfigModel
                 isAdvancedMode={isAdvancedMode}
@@ -677,7 +677,7 @@ const Configuration: FC = () => {
               {isMobile && (
                 <Button className='!h-8 !text-[13px] font-medium' onClick={showDebugPanel}>
                   <span className='mr-1'>{t('appDebug.operation.debugConfig')}</span>
-                  <CodeBracketIcon className="h-4 w-4 text-gray-500" />
+                  <CodeBracketIcon className="w-4 h-4 text-gray-500" />
                 </Button>
               )}
               <Button type='primary' onClick={() => handlePublish(false)} className={cn(cannotPublish && '!bg-primary-200 !cursor-not-allowed', 'shrink-0 w-[70px] !h-8 !text-[13px] font-medium')}>{t('appDebug.operation.applyConfig')}</Button>
@@ -687,7 +687,7 @@ const Configuration: FC = () => {
             <div className="w-full sm:w-1/2 shrink-0">
               <Config />
             </div>
-            {!isMobile && <div className="relative w-1/2 grow h-full overflow-y-auto py-4 px-6 bg-gray-50 flex flex-col rounded-tl-2xl border-t border-l" style={{ borderColor: 'rgba(0, 0, 0, 0.02)' }}>
+            {!isMobile && <div className="relative flex flex-col w-1/2 h-full px-6 py-4 overflow-y-auto border-t border-l grow bg-gray-50 rounded-tl-2xl" style={{ borderColor: 'rgba(0, 0, 0, 0.02)' }}>
               <Debug
                 hasSetAPIKEY={hasSetAPIKEY}
                 onSetting={() => setShowAccountSettingModal({ payload: 'provider' })}
