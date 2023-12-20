@@ -117,7 +117,7 @@ const SettingsModal: FC<SettingsModalProps> = ({
 
   return (
     <div
-      className='overflow-hidden w-full flex flex-col bg-white border-[0.5px] border-gray-200 rounded-xl shadow-xl'
+      className='overflow-hidden w-full flex flex-col bg-white border-[0.5px] border-[#F1F3F9] rounded-xl shadow-xl'
       style={{
         height: 'calc(100vh - 72px)',
       }}

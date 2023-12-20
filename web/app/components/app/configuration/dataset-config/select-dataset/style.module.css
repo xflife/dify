@@ -9,5 +9,5 @@
 }
 
 .item.disabled {
-  @apply bg-white border-gray-200 cursor-default;
+  @apply bg-white border-[#F1F3F9] cursor-default;
 }

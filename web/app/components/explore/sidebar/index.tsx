@@ -90,7 +90,7 @@ const SideBar: FC<IExploreSideBarProps> = ({
   }, [controlUpdateInstalledApps])
 
   return (
-    <div className='w-fit sm:w-[216px] shrink-0 pt-6 px-4 border-gray-200 cursor-pointer'>
+    <div className='w-fit sm:w-[216px] shrink-0 pt-6 px-4 border-[#F1F3F9] cursor-pointer'>
       <div>
         <Link
           href='/explore/apps'

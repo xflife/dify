@@ -144,7 +144,7 @@ const NormalForm = () => {
         <p className='mt-1 text-sm text-gray-600'>{t('login.welcome')}</p>
       </div>
 
-      <div className="w-full mx-auto mt-8">
+      <div className="w-full mx-auto mt-7">
         <div className="bg-white ">
           {!IS_CE_EDITION && (
             <div className="flex flex-col gap-3 mt-6">
@@ -162,7 +162,7 @@ const NormalForm = () => {
                           'w-5 h-5 mr-2',
                         )
                       } />
-                      <span className="truncate text-gray-800">{t('login.withGitHub')}</span>
+                      <span className="text-gray-800 truncate">{t('login.withGitHub')}</span>
                     </>
                   </Button>
                 </a>
@@ -181,7 +181,7 @@ const NormalForm = () => {
                           'w-5 h-5 mr-2',
                         )
                       } />
-                      <span className="truncate text-gray-800">{t('login.withGoogle')}</span>
+                      <span className="text-gray-800 truncate">{t('login.withGoogle')}</span>
                     </>
                   </Button>
                 </a>
@@ -202,7 +202,7 @@ const NormalForm = () => {
 
               <form onSubmit={() => { }}>
                 <div className='mb-5'>
-                  <label htmlFor="email" className="my-2 block text-sm font-medium text-gray-900">
+                  <label htmlFor="email" className="block my-2 text-base font-medium text-gray-900">
                     {t('login.email')}
                   </label>
                   <div className="mt-1">
@@ -213,13 +213,13 @@ const NormalForm = () => {
                       type="email"
                       autoComplete="email"
                       placeholder={t('login.emailPlaceholder') || ''}
-                      className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm'}
+                      className={'appearance-none block w-full rounded-3xl pl-[14px] px-3 py-3 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-base'}
                     />
                   </div>
                 </div>
 
                 <div className='mb-4'>
-                  <label htmlFor="password" className="my-2 flex items-center justify-between text-sm font-medium text-gray-900">
+                  <label htmlFor="password" className="flex items-center justify-between my-2 text-base font-medium text-gray-900">
                     <span>{t('login.password')}</span>
                     {/* <Tooltip
                       selector='forget-password'
@@ -237,7 +237,7 @@ const NormalForm = () => {
                       <span className='cursor-pointer text-primary-600'>{t('login.forget')}</span>
                     </Tooltip> */}
                   </label>
-                  <div className="relative mt-1 rounded-md shadow-sm">
+                  <div className="relative mt-1 shadow-sm rounded-3xl">
                     <input
                       id="password"
                       value={password}
@@ -249,7 +249,7 @@ const NormalForm = () => {
                       type={showPassword ? 'text' : 'password'}
                       autoComplete="current-password"
                       placeholder={t('login.passwordPlaceholder') || ''}
-                      className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm pr-10'}
+                      className={'appearance-none block w-full rounded-3xl pl-[14px] px-3 py-3 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-base pr-10'}
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                       <button
@@ -263,34 +263,46 @@ const NormalForm = () => {
                   </div>
                 </div>
 
-                <div className='mb-2'>
+                <div className='mb-2 mt-7'>
                   <Button
                     tabIndex={0}
                     type='primary'
                     onClick={handleEmailPasswordLogin}
                     disabled={isLoading}
-                    className="w-full !fone-medium !text-sm"
+                    className="w-full py-6 !fone-medium !text-base"
                   >{t('login.signBtn')}</Button>
                 </div>
               </form>
             </>
           }
+          <div
+            className="flex justify-end w-full mt-2 underline"
+            // onClick={() => setRegisterNew(true)}
+          >
+            <Link
+              href="https://www.surveymonkey.com/r/NRQ2NDV"
+              target="_blank"
+              className="align-right"
+            >
+              {t('login.newUser')}
+            </Link>
+          </div>
           {/*  agree to our Terms and Privacy Policy. */}
-          <div className="w-hull text-center block mt-2 text-xs text-gray-600">
+          {/* <div className="block mt-2 text-xs text-center text-gray-600 w-hull">
             {t('login.tosDesc')}
             &nbsp;
             <Link
               className='text-primary-600'
               target={'_blank'}
-              href={locale === 'en' ? 'https://docs.dify.ai/user-agreement/terms-of-service' : 'https://docs.dify.ai/v/zh-hans/user-agreement/terms-of-service'}
+              href={locale === 'en' ? 'https://docs.iPollo.AI.ai/user-agreement/terms-of-service' : 'https://docs.iPollo.AI.ai/v/zh-hans/user-agreement/terms-of-service'}
             >{t('login.tos')}</Link>
             &nbsp;&&nbsp;
             <Link
               className='text-primary-600'
               target={'_blank'}
-              href={locale === 'en' ? 'https://docs.dify.ai/user-agreement/privacy-policy' : 'https://docs.dify.ai/v/zh-hans/user-agreement/privacy-policy'}
+              href={locale === 'en' ? 'https://docs.iPollo.AI.ai/user-agreement/privacy-policy' : 'https://docs.iPollo.AI.ai/v/zh-hans/user-agreement/privacy-policy'}
             >{t('login.pp')}</Link>
-          </div>
+          </div> */}
 
         </div>
       </div>

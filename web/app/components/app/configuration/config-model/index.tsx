@@ -345,7 +345,7 @@ const ConfigModel: FC<IConfigModelProps> = ({
                       <div className='grow flex items-center' key={tone.id}>
                         <Radio
                           value={tone.id}
-                          className={cn(tone.id === toneId && 'rounded-md border border-gray-200 shadow-md', '!mr-0 grow !px-1 sm:!px-2 !justify-center text-[13px] font-medium')}
+                          className={cn(tone.id === toneId && 'rounded-md border border-[#F1F3F9] shadow-md', '!mr-0 grow !px-1 sm:!px-2 !justify-center text-[13px] font-medium')}
                           labelClassName={cn(tone.id === toneId
                             ? ({
                               1: 'text-[#6938EF]',
@@ -360,13 +360,13 @@ const ConfigModel: FC<IConfigModelProps> = ({
                             <div className=""></div>
                           </>
                         </Radio>
-                        {tone.id !== toneId && tone.id + 1 !== toneId && (<div className='h-5 border-r border-gray-200'></div>)}
+                        {tone.id !== toneId && tone.id + 1 !== toneId && (<div className='h-5 border-r border-[#F1F3F9]'></div>)}
                       </div>
                     ))}
                   </>
                   <Radio
                     value={TONE_LIST[3].id}
-                    className={cn(toneId === 4 && 'rounded-md border border-gray-200 shadow-md', '!mr-0 grow !px-1 sm:!px-2 !justify-center text-[13px] font-medium')}
+                    className={cn(toneId === 4 && 'rounded-md border border-[#F1F3F9] shadow-md', '!mr-0 grow !px-1 sm:!px-2 !justify-center text-[13px] font-medium')}
                     labelClassName={cn('flex items-center space-x-2 ', toneId === 4 ? 'text-[#155EEF]' : 'text-[#667085]')}
                   >
                     <>

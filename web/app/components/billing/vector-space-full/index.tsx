@@ -15,7 +15,7 @@ const VectorSpaceFull: FC = () => {
   const { total } = plan
 
   return (
-    <GridMask wrapperClassName='border border-gray-200 rounded-xl' canvasClassName='rounded-xl' gradientClassName='rounded-xl'>
+    <GridMask wrapperClassName='border border-[#F1F3F9] rounded-xl' canvasClassName='rounded-xl' gradientClassName='rounded-xl'>
       <div className='py-5 px-6'>
         <div className='flex justify-between items-center'>
           <div className={cn(s.textGradient, 'leading-[24px] text-base font-semibold')}>

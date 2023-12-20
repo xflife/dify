@@ -140,7 +140,7 @@ const AdvancedPromptInput: FC<Props> = ({
         <div className='leading-[18px] text-[13px] font-medium text-[#DC6803]'>{t('appDebug.promptMode.contextMissing')}</div>
       </div>
       <div
-        className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-gray-200 shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
+        className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-[#F1F3F9] shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
         onClick={onHideContextMissingTip}
       >{t('common.operation.ok')}</div>
     </div>

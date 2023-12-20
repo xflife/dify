@@ -74,7 +74,7 @@ const MembersPage = () => {
             <UpgradeBtn className='mr-2' loc='member-invite' />
           )}
           <div className={
-            `shrink-0 flex items-center py-[7px] px-3 border-[0.5px] border-gray-200
+            `shrink-0 flex items-center py-[7px] px-3 border-[0.5px] border-[#F1F3F9]
             text-[13px] font-medium text-primary-600 bg-white
             shadow-xs rounded-lg ${(isCurrentWorkspaceManager && !isMemberFull) ? 'cursor-pointer' : 'grayscale opacity-50 cursor-default'}`
           } onClick={() => (isCurrentWorkspaceManager && !isMemberFull) && setInviteModalVisible(true)}>
@@ -83,7 +83,7 @@ const MembersPage = () => {
           </div>
         </div>
         <div className='overflow-x-auto'>
-          <div className='flex items-center py-[7px] border-b border-gray-200 min-w-[480px]'>
+          <div className='flex items-center py-[7px] border-b border-[#F1F3F9] min-w-[480px]'>
             <div className='grow px-3 text-xs font-medium text-gray-500'>{t('common.members.name')}</div>
             <div className='shrink-0 w-[104px] text-xs font-medium text-gray-500'>{t('common.members.lastActive')}</div>
             <div className='shrink-0 w-[96px] px-3 text-xs font-medium text-gray-500'>{t('common.members.role')}</div>

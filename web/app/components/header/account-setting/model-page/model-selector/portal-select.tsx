@@ -248,7 +248,7 @@ const ModelSelector: FC<Props> = ({
         </PortalToFollowElemTrigger>
         {!readonly && (
           <PortalToFollowElemContent
-            className={cn(popClassName, !widthSameToTrigger && (isShowModelModeType ? 'max-w-[312px]' : 'max-w-[260px]'), 'absolute top-10 p-1 min-w-[232px] max-h-[366px] bg-white border-[0.5px] border-gray-200 rounded-lg shadow-lg overflow-auto z-[999]')}
+            className={cn(popClassName, !widthSameToTrigger && (isShowModelModeType ? 'max-w-[312px]' : 'max-w-[260px]'), 'absolute top-10 p-1 min-w-[232px] max-h-[366px] bg-white border-[0.5px] border-[#F1F3F9] rounded-lg shadow-lg overflow-auto z-[999]')}
             style={{
               width: (widthSameToTrigger && triggerRef.current?.offsetWidth) ? `${triggerRef.current?.offsetWidth}px` : 'auto',
             }}

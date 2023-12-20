@@ -83,7 +83,7 @@
 }
 
 .indexItem.disabled:hover .radio {
-  @apply w-4 h-4 border-[2px] border-gray-200 rounded-full;
+  @apply w-4 h-4 border-[2px] border-[#F1F3F9] rounded-full;
 }
 
 .radioItem {
@@ -154,7 +154,7 @@
 }
 
 .radioItem .radio {
-  @apply w-4 h-4 border-[2px] border-gray-200 rounded-full;
+  @apply w-4 h-4 border-[2px] border-[#F1F3F9] rounded-full;
   position: absolute;
   top: 26px;
   right: 20px;
@@ -264,7 +264,7 @@
 }
 .input {
   @apply inline-flex h-9 w-full py-1 px-2 rounded-lg text-xs leading-normal;
-  @apply bg-gray-100 caret-primary-600 hover:bg-gray-100 focus:ring-1 focus:ring-inset focus:ring-gray-200 focus-visible:outline-none focus:bg-white placeholder:text-gray-400;
+  @apply bg-gray-100 caret-[#dfe1e7] hover:bg-gray-100 focus:ring-1 focus:ring-inset focus:ring-gray-200 focus-visible:outline-none focus:bg-white placeholder:text-gray-400;
 }
 
 .source {
@@ -398,7 +398,7 @@
   z-index: 10;
 }
 
-/* 
+/*
  * `fixed` must under `previewHeader` because of style override would not work
  */
 .fixed {

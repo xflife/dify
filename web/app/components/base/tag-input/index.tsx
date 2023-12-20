@@ -69,7 +69,7 @@ const TagInput: FC<TagInputProps> = ({
         items.map((item, index) => (
           <div
             key={item}
-            className={cn('flex items-center mr-1 mt-1 px-2 py-1 text-sm text-gray-700 border border-gray-200', isSpecialMode ? 'bg-white rounded-md' : 'rounded-lg')}>
+            className={cn('flex items-center mr-1 mt-1 px-2 py-1 text-sm text-gray-700 border border-[#F1F3F9]', isSpecialMode ? 'bg-white rounded-md' : 'rounded-lg')}>
             {item}
             {
               !disableRemove && (
@@ -85,10 +85,10 @@ const TagInput: FC<TagInputProps> = ({
       {
         !disableAdd && (
           <AutosizeInput
-            inputClassName={cn('outline-none appearance-none placeholder:text-gray-300 caret-primary-600 hover:placeholder:text-gray-400', isSpecialMode ? 'bg-transparent' : '')}
+            inputClassName={cn('outline-none appearance-none placeholder:text-gray-300 caret-[#dfe1e7] hover:placeholder:text-gray-400', isSpecialMode ? 'bg-transparent' : '')}
             className={`
               mt-1 py-1 rounded-lg border border-transparent text-sm max-w-[300px] overflow-hidden
-              ${focused && 'px-2 border !border-dashed !border-gray-200'}
+              ${focused && 'px-2 border !border-dashed !border-[#F1F3F9]'}
             `}
             onFocus={() => setFocused(true)}
             onBlur={handleBlur}

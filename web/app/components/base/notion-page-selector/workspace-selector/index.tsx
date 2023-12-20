@@ -49,7 +49,7 @@ export default function WorkspaceSelector({
                   s.popup,
                   `absolute left-0 top-8 w-80
                   origin-top-right rounded-lg bg-white
-                  border-[0.5px] border-gray-200`,
+                  border-[0.5px] border-[#F1F3F9]`,
                 )}
               >
                 <div className="p-1 max-h-50 overflow-auto">

@@ -27,7 +27,7 @@ const AdvancedModeWarning: FC = () => {
         </div>
 
         <div
-          className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-gray-200 shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
+          className='flex items-center h-6 px-2 rounded-md bg-[#fff] border border-[#F1F3F9] shadow-xs text-xs font-medium text-primary-600 cursor-pointer'
           onClick={() => setShow(false)}
         >{t('appDebug.promptMode.advancedWarning.ok')}</div>
       </div>

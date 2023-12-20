@@ -91,7 +91,7 @@ const CSVUploader: FC<Props> = ({
       />
       <div ref={dropRef}>
         {!file && (
-          <div className={cn('flex items-center h-20 rounded-xl bg-gray-50 border border-dashed border-gray-200 text-sm font-normal', dragging && 'bg-[#F5F8FF] border border-[#B2CCFF]')}>
+          <div className={cn('flex items-center h-20 rounded-xl bg-gray-50 border border-dashed border-[#F1F3F9] text-sm font-normal', dragging && 'bg-[#F5F8FF] border border-[#B2CCFF]')}>
             <div className='w-full flex items-center justify-center space-x-2'>
               <CSVIcon className="shrink-0" />
               <div className='text-gray-500'>
@@ -103,7 +103,7 @@ const CSVUploader: FC<Props> = ({
           </div>
         )}
         {file && (
-          <div className={cn('flex items-center h-20 px-6 rounded-xl bg-gray-50 border border-gray-200 text-sm font-normal group', 'hover:bg-[#F5F8FF] hover:border-[#B2CCFF]')}>
+          <div className={cn('flex items-center h-20 px-6 rounded-xl bg-gray-50 border border-[#F1F3F9] text-sm font-normal group', 'hover:bg-[#F5F8FF] hover:border-[#B2CCFF]')}>
             <CSVIcon className="shrink-0" />
             <div className='flex ml-2 w-0 grow'>
               <span className='max-w-[calc(100%_-_30px)] text-ellipsis whitespace-nowrap overflow-hidden text-gray-800'>{file.name.replace(/.csv$/, '')}</span>

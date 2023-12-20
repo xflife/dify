@@ -213,7 +213,7 @@ function DetailPanel<T extends ChatConversationFullDetailResponse | CompletionCo
     return value
   }
 
-  return (<div className='rounded-xl border-[0.5px] border-gray-200 h-full flex flex-col overflow-auto'>
+  return (<div className='rounded-xl border-[0.5px] border-[#F1F3F9] h-full flex flex-col overflow-auto'>
     {/* Panel Header */}
     <div className='border-b border-gray-100 py-4 px-6 flex items-center justify-between'>
       <div>
@@ -484,7 +484,7 @@ const ConversationList: FC<IConversationList> = ({ logs, appDetail, onRefresh })
   return (
     <div className='overflow-x-auto'>
       <table className={`w-full min-w-[440px] border-collapse border-0 text-sm mt-3 ${s.logTable}`}>
-        <thead className="h-8 leading-8 border-b border-gray-200 text-gray-500 font-bold">
+        <thead className="h-8 leading-8 border-b border-[#F1F3F9] text-gray-500 font-bold">
           <tr>
             <td className='w-[1.375rem] whitespace-nowrap'></td>
             <td className='whitespace-nowrap'>{t('appLog.table.header.time')}</td>
@@ -502,7 +502,7 @@ const ConversationList: FC<IConversationList> = ({ logs, appDetail, onRefresh })
             const rightValue = get(log, isChatMode ? 'message_count' : 'message.answer')
             return <tr
               key={log.id}
-              className={`border-b border-gray-200 h-8 hover:bg-gray-50 cursor-pointer ${currentConversation?.id !== log.id ? '' : 'bg-gray-50'}`}
+              className={`border-b border-[#F1F3F9] h-8 hover:bg-gray-50 cursor-pointer ${currentConversation?.id !== log.id ? '' : 'bg-gray-50'}`}
               onClick={() => {
                 setShowDrawer(true)
                 setCurrentConversation(log)

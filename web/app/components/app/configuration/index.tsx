@@ -647,7 +647,7 @@ const Configuration: FC = () => {
                     {canReturnToSimpleMode && (
                       <div
                         onClick={() => setPromptMode(PromptMode.simple)}
-                        className='flex items-center h-6 px-2 bg-indigo-600 shadow-xs border border-gray-200 rounded-lg text-white text-xs font-semibold cursor-pointer space-x-1'
+                        className='flex items-center h-6 px-2 bg-indigo-600 shadow-xs border border-[#F1F3F9] rounded-lg text-white text-xs font-semibold cursor-pointer space-x-1'
                       >
                         <FlipBackward className='w-3 h-3 text-white' />
                         <div className='text-xs font-semibold uppercase'>{t('appDebug.promptMode.switchBack')}</div>

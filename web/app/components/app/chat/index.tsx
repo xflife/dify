@@ -348,7 +348,7 @@ const Chat: FC<IChatProps> = ({
                   </div>
                 </div>)
             }
-            <div className={cn('p-[5.5px] max-h-[150px] bg-white border-[1.5px] border-gray-200 rounded-xl overflow-y-auto', isDragActive && 'border-primary-600')}>
+            <div className={cn('p-[5.5px] max-h-[150px] bg-white border-[1.5px] border-[#F1F3F9] rounded-xl overflow-y-auto', isDragActive && 'border-primary-600')}>
               {
                 visionConfig?.enabled && (
                   <>

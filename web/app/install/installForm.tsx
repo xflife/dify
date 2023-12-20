@@ -100,7 +100,7 @@ const InstallForm = () => {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder={t('login.emailPlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm'}
+                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-sm'}
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ const InstallForm = () => {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder={t('login.namePlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm pr-10'}
+                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-sm pr-10'}
                   />
                 </div>
               </div>
@@ -132,7 +132,7 @@ const InstallForm = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder={t('login.passwordPlaceholder') || ''}
-                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm pr-10'}
+                    className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-sm pr-10'}
                   />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                     <button

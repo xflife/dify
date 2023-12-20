@@ -45,7 +45,7 @@ const RadioCard: FC<Props> = ({
         )}
       </div>
       {((isChosen && chosenConfig) || noRadio) && (
-        <div className={cn(chosenConfigWrapClassName, 'pt-2 px-14 pb-6 border-t border-gray-200')}>
+        <div className={cn(chosenConfigWrapClassName, 'pt-2 px-14 pb-6 border-t border-[#F1F3F9]')}>
           {chosenConfig}
         </div>
       )}

@@ -18,7 +18,7 @@
   @apply grid gap-4 grid-cols-3 min-w-[902px] last:mb-[30px];
 }
 .segWrapper {
-  @apply box-border h-[180px] w-full xl:min-w-[290px] bg-gray-50 px-4 pt-4 flex flex-col text-opacity-50 rounded-xl border border-transparent hover:border-gray-200 hover:shadow-lg hover:cursor-pointer hover:bg-white;
+  @apply box-border h-[180px] w-full xl:min-w-[290px] bg-gray-50 px-4 pt-4 flex flex-col text-opacity-50 rounded-xl border border-transparent hover:border-[#F1F3F9] hover:shadow-lg hover:cursor-pointer hover:bg-white;
 }
 .segTitleWrapper {
   @apply flex items-center justify-between;
@@ -60,7 +60,7 @@
   @apply text-gray-700 w-full max-h-[200px] overflow-auto flex flex-wrap;
 }
 .keyword {
-  @apply text-sm border border-gray-200 max-w-[200px] max-h-[100px] whitespace-pre-line overflow-y-auto mr-1 mb-2 last:mr-0 px-2 py-1 rounded-lg;
+  @apply text-sm border border-[#F1F3F9] max-w-[200px] max-h-[100px] whitespace-pre-line overflow-y-auto mr-1 mb-2 last:mr-0 px-2 py-1 rounded-lg;
 }
 .hashText {
   @apply w-48 inline-block truncate;

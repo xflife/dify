@@ -130,7 +130,7 @@ const CustomWebAppBrand = () => {
           }
         </div>
       </div>
-      <div className='flex items-center justify-between mb-2 px-4 h-14 rounded-xl border-[0.5px] border-gray-200 bg-gray-50 text-sm font-medium text-gray-900'>
+      <div className='flex items-center justify-between mb-2 px-4 h-14 rounded-xl border-[0.5px] border-[#F1F3F9] bg-gray-50 text-sm font-medium text-gray-900'>
         {t('custom.webapp.removeBrand')}
         <Switch
           size='l'
@@ -140,7 +140,7 @@ const CustomWebAppBrand = () => {
         />
       </div>
       <div className={`
-        flex items-center justify-between px-4 py-3 rounded-xl border-[0.5px] border-gray-200 bg-gray-50
+        flex items-center justify-between px-4 py-3 rounded-xl border-[0.5px] border-[#F1F3F9] bg-gray-50
         ${webappBrandRemoved && 'opacity-30'}
       `}>
         <div>
@@ -152,7 +152,7 @@ const CustomWebAppBrand = () => {
             !uploading && (
               <Button
                 className={`
-                  relative mr-2 !h-8 !px-3 bg-white !text-[13px] 
+                  relative mr-2 !h-8 !px-3 bg-white !text-[13px]
                   ${isSandbox ? 'opacity-40' : ''}
                 `}
                 disabled={isSandbox || webappBrandRemoved || !isCurrentWorkspaceManager}
@@ -212,7 +212,7 @@ const CustomWebAppBrand = () => {
           <div className='mr-2 h-5 w-[1px] bg-black/5'></div>
           <Button
             className={`
-              !h-8 !px-3 bg-white !text-[13px] 
+              !h-8 !px-3 bg-white !text-[13px]
               ${isSandbox ? 'opacity-40' : ''}
             `}
             disabled={isSandbox || (!webappLogo && !webappBrandRemoved) || webappBrandRemoved || !isCurrentWorkspaceManager}

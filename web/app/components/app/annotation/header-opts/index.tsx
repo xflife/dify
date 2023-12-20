@@ -109,7 +109,7 @@ const HeaderOptions: FC<Props> = ({
         btnElement={<div className={cn(s.actionIcon, s.commonIcon)} />}
         btnClassName={open =>
           cn(
-            open ? 'border-gray-300 !bg-gray-100 !shadow-none' : 'border-gray-200',
+            open ? 'border-gray-300 !bg-gray-100 !shadow-none' : 'border-[#F1F3F9]',
             s.actionIconWrapper,
           )
         }

@@ -92,7 +92,7 @@ const NavSelector = ({ curNav, navs, createText, onCreate, onLoadmore }: INavSel
                   className='
                     flex justify-center items-center
                     ml-4 mr-2 w-6 h-6 bg-gray-100 rounded-[6px]
-                    border-[0.5px] border-gray-200 border-dashed
+                    border-[0.5px] border-[#F1F3F9] border-dashed
                   '
                 >
                   <PlusIcon className='w-4 h-4 text-gray-500' />

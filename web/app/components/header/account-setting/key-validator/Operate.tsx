@@ -47,7 +47,7 @@ const Operate = ({
   if (status === 'add') {
     return (
       <div className={
-        `px-3 h-[28px] bg-white border border-gray-200 rounded-md cursor-pointer
+        `px-3 h-[28px] bg-white border border-[#F1F3F9] rounded-md cursor-pointer
         text-xs font-medium text-gray-700 flex items-center ${disabled && 'opacity-50 cursor-default'}}`
       } onClick={() => !disabled && onAdd()}>
         {t('common.provider.addKey')}
@@ -72,7 +72,7 @@ const Operate = ({
           )
         }
         <div className={
-          `px-3 h-[28px] bg-white border border-gray-200 rounded-md cursor-pointer
+          `px-3 h-[28px] bg-white border border-[#F1F3F9] rounded-md cursor-pointer
           text-xs font-medium text-gray-700 flex items-center ${disabled && 'opacity-50 cursor-default'}}`
         } onClick={() => !disabled && onEdit()}>
           {t('common.provider.editKey')}

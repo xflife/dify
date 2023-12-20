@@ -129,7 +129,7 @@ function AppCard({
 
   return (
     <div
-      className={`shadow-xs border-[0.5px] rounded-lg border-gray-200 ${
+      className={`shadow-xs border-[0.5px] rounded-lg border-[#F1F3F9] ${
         className ?? ''
       }`}
     >

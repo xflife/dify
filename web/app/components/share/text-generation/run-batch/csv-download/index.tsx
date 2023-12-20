@@ -29,11 +29,11 @@ const CSVDownload: FC<ICSVDownloadProps> = ({
     <div className='mt-6'>
       <div className='text-sm text-gray-900 font-medium'>{t('share.generation.csvStructureTitle')}</div>
       <div className='mt-2 max-h-[500px] overflow-auto'>
-        <table className='w-full border-separate border-spacing-0 border border-gray-200 rounded-lg text-xs'>
+        <table className='w-full border-separate border-spacing-0 border border-[#F1F3F9] rounded-lg text-xs'>
           <thead className='text-gray-500'>
             <tr>
               {addQueryContentVars.map((item, i) => (
-                <td key={i} className='h-9 pl-4 border-b border-gray-200'>{item.name}</td>
+                <td key={i} className='h-9 pl-4 border-b border-[#F1F3F9]'>{item.name}</td>
               ))}
             </tr>
           </thead>

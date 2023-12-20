@@ -97,7 +97,7 @@ const SystemModel: FC<SystemModelProps> = ({
     >
       <PortalToFollowElemTrigger onClick={() => setOpen(v => !v)}>
         <div className={`
-          flex items-center px-2 h-6 text-xs text-gray-700 cursor-pointer bg-white rounded-md border-[0.5px] border-gray-200 shadow-xs
+          flex items-center px-2 h-6 text-xs text-gray-700 cursor-pointer bg-white rounded-md border-[0.5px] border-[#F1F3F9] shadow-xs
           hover:bg-gray-100 hover:shadow-none
           ${open && 'bg-gray-100 shadow-none'}
         `}>

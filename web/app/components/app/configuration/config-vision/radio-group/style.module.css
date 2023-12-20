@@ -15,7 +15,7 @@
 }
 
 .radio {
-  @apply w-4 h-4 border-[2px] border-gray-200 rounded-full;
+  @apply w-4 h-4 border-[2px] border-[#F1F3F9] rounded-full;
 }
 
 .item.checked .radio {

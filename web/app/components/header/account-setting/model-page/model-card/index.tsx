@@ -32,7 +32,7 @@ const ModelCard: FC<ModelCardProps> = ({
   const custom = currentProvider?.providers.find(p => p.provider_type === 'custom') as ProviderWithConfig
 
   return (
-    <div className='rounded-xl border-[0.5px] border-gray-200 shadow-xs'>
+    <div className='rounded-xl border-[0.5px] border-[#F1F3F9] shadow-xs'>
       <div className={`flex px-4 pt-4 pb-3 rounded-t-lg ${modelItem.bgColor}`}>
         <div className='grow mr-3'>
           <div className='mb-1'>

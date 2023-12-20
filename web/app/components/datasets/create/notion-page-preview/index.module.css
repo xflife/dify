@@ -1,15 +1,15 @@
 .filePreview {
-    @apply flex flex-col border-l border-gray-200 shrink-0;
+    @apply flex flex-col border-l border-[#F1F3F9] shrink-0;
     width: 528px;
     background-color: #fcfcfd;
   }
-  
+
   .previewHeader {
-    @apply border-b border-gray-200 shrink-0;
+    @apply border-b border-[#F1F3F9] shrink-0;
     margin: 42px 32px 0;
     padding-bottom: 16px;
   }
-  
+
   .previewHeader .title {
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
     font-size: 18px;
     line-height: 28px;
   }
-  
+
   .previewHeader .fileName {
     display: flex;
     align-items: center;
@@ -28,11 +28,11 @@
     line-height: 18px;
     color: #1D2939;
   }
-  
+
   .previewHeader .filetype {
     color: #667085;
   }
-  
+
   .previewContent {
     @apply overflow-y-auto grow;
     padding: 20px 32px;
@@ -41,7 +41,7 @@
     line-height: 24px;
     color: #344054;
   }
-  
+
   .previewContent .loading {
     width: 100%;
     height: 180px;
@@ -51,4 +51,3 @@
   .fileContent {
     white-space: pre-line;
   }
-  

@@ -85,7 +85,7 @@ const Tools = () => {
         <div className='grow flex items-center'>
           <div
             className={`
-              group flex items-center justify-center mr-1 w-6 h-6 rounded-md 
+              group flex items-center justify-center mr-1 w-6 h-6 rounded-md
               ${externalDataToolsConfig.length && 'hover:shadow-xs hover:bg-white'}
             `}
             onClick={() => setExpanded(v => !v)}
@@ -131,7 +131,7 @@ const Tools = () => {
               externalDataToolsConfig.map((item, index: number) => (
                 <div
                   key={`${index}-${item.type}-${item.label}-${item.variable}`}
-                  className='group flex items-center mb-1 last-of-type:mb-0 px-2.5 py-2 rounded-lg border-[0.5px] border-gray-200 bg-white shadow-xs'
+                  className='group flex items-center mb-1 last-of-type:mb-0 px-2.5 py-2 rounded-lg border-[0.5px] border-[#F1F3F9] bg-white shadow-xs'
                 >
                   <div className='grow flex items-center'>
                     <AppIcon size='large'

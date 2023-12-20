@@ -32,7 +32,7 @@ export default function Select({
           <Menu.Button className="inline-flex w-full h-[44px]justify-center items-center
           rounded-lg px-[10px] py-[6px]
           text-gray-900 text-[13px] font-medium
-          border border-gray-200
+          border border-[#F1F3F9]
           hover:bg-gray-100">
             <GlobeAltIcon className="w-5 h-5 mr-1" aria-hidden="true" />
             {item?.name}

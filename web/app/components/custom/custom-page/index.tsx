@@ -17,7 +17,7 @@ const CustomPage = () => {
       {
         plan.type === Plan.sandbox && (
           <GridMask canvasClassName='!rounded-xl'>
-            <div className='flex justify-between mb-1 px-6 py-5 h-[88px] shadow-md rounded-xl border-[0.5px] border-gray-200'>
+            <div className='flex justify-between mb-1 px-6 py-5 h-[88px] shadow-md rounded-xl border-[0.5px] border-[#F1F3F9]'>
               <div className={`${s.textGradient} leading-[24px] text-base font-semibold`}>
                 <div>{t('custom.upgradeTip.prefix')}</div>
                 <div>{t('custom.upgradeTip.suffix')}</div>
