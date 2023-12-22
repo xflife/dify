@@ -53,7 +53,7 @@ const CustomizeModal: FC<IShareLinkProps> = ({
     className='!max-w-2xl w-[640px]'
     closable={true}
   >
-    <div className='w-full mt-4 px-6 py-5 border-[#F1F3F9] rounded-lg border-[0.5px]'>
+    <div className='w-full mt-4 px-6 py-5 border-gray-200 rounded-lg border-[0.5px]'>
       <Tag bordered={true} hideBg={true} className='text-primary-600 border-primary-600 uppercase'>{t(`${prefixCustomize}.way`)} 1</Tag>
       <p className='my-2 text-base font-medium text-gray-800'>{t(`${prefixCustomize}.way1.name`)}</p>
       <div className='flex py-4'>
@@ -93,7 +93,7 @@ const CustomizeModal: FC<IShareLinkProps> = ({
       </div>
 
     </div>
-    <div className='w-full mt-4 px-6 py-5 border-[#F1F3F9] rounded-lg border-[0.5px]'>
+    <div className='w-full mt-4 px-6 py-5 border-gray-200 rounded-lg border-[0.5px]'>
       <Tag bordered={true} hideBg={true} className='text-primary-600 border-primary-600 uppercase'>{t(`${prefixCustomize}.way`)} 2</Tag>
       <p className='mt-2 text-base font-medium text-gray-800'>{t(`${prefixCustomize}.way2.name`)}</p>
       <Button

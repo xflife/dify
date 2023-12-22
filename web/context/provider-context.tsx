@@ -2,14 +2,14 @@
 
 import { createContext, useContext } from 'use-context-selector'
 import useSWR from 'swr'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchDefaultModal, fetchModelList, fetchSupportRetrievalMethods } from '@/service/common'
 import { ModelFeature, ModelType } from '@/app/components/header/account-setting/model-page/declarations'
 import type { BackendModel } from '@/app/components/header/account-setting/model-page/declarations'
 import type { RETRIEVE_METHOD } from '@/types/app'
 import { Plan, type UsagePlanInfo } from '@/app/components/billing/type'
-// import { fetchCurrentPlanInfo } from '@/service/billing'
-// import { parseCurrentPlan } from '@/app/components/billing/utils'
+import { fetchCurrentPlanInfo } from '@/service/billing'
+import { parseCurrentPlan } from '@/app/components/billing/utils'
 import { defaultPlan } from '@/app/components/billing/config'
 
 const ProviderContext = createContext<{
@@ -119,24 +119,24 @@ export const ProviderContextProvider = ({
   const [plan, setPlan] = useState(defaultPlan)
   const [isFetchedPlan, setIsFetchedPlan] = useState(false)
   const [enableBilling, setEnableBilling] = useState(true)
-  // useEffect(() => {
-  //   (async () => {
-  //     const data = await fetchCurrentPlanInfo()
-  //     const enabled = data.enabled
-  //     setEnableBilling(enabled)
-  //     if (enabled) {
-  //       setPlan(parseCurrentPlan(data))
-  //       // setPlan(parseCurrentPlan({
-  //       //   ...data,
-  //       //   annotation_quota_limit: {
-  //       //     ...data.annotation_quota_limit,
-  //       //     limit: 10,
-  //       //   },
-  //       // }))
-  //       setIsFetchedPlan(true)
-  //     }
-  //   })()
-  // }, [])
+  useEffect(() => {
+    (async () => {
+      const data = await fetchCurrentPlanInfo()
+      const enabled = data.enabled
+      setEnableBilling(enabled)
+      if (enabled) {
+        setPlan(parseCurrentPlan(data))
+        // setPlan(parseCurrentPlan({
+        //   ...data,
+        //   annotation_quota_limit: {
+        //     ...data.annotation_quota_limit,
+        //     limit: 10,
+        //   },
+        // }))
+        setIsFetchedPlan(true)
+      }
+    })()
+  }, [])
 
   return (
     <ProviderContext.Provider value={{

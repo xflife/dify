@@ -90,7 +90,7 @@ const Operation = ({
               <Menu.Items
                 className={cn(
                   `
-                      absolute right-0 top-[52px] z-10 bg-white border-[0.5px] border-[#F1F3F9]
+                      absolute right-0 top-[52px] z-10 bg-white border-[0.5px] border-gray-200
                       divide-y divide-gray-100 origin-top-right rounded-lg
                     `,
                   s.popup,
@@ -98,8 +98,8 @@ const Operation = ({
               >
                 <div className="px-1 py-1">
                   {
-                    ['admin', 'normal'].map((role, key: number) => (
-                      <Menu.Item key={key}>
+                    ['admin', 'normal'].map(role => (
+                      <Menu.Item>
                         <div className={itemClassName} onClick={() => handleUpdateMemberRole(role)}>
                           {
                             role === member.role

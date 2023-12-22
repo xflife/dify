@@ -4,7 +4,6 @@ const translation = {
     line2: 'Engineering',
   },
   promptMode: {
-    prefix: 'Prompt word engineering',
     simple: 'Switch to Expert Mode to edit the whole PROMPT',
     advanced: 'Expert Mode',
     switchBack: 'Switch back',

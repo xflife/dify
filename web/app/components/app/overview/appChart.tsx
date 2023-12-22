@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import { get } from 'lodash-es'
 import { useTranslation } from 'react-i18next'
 import { formatNumber } from '@/utils/format'
-import AppBasic from '@/app/components/app-sidebar/basic'
+import Basic from '@/app/components/app-sidebar/basic'
 import Loading from '@/app/components/base/loading'
 import type { AppDailyConversationsResponse, AppDailyEndUsersResponse, AppTokenCostsResponse } from '@/models/app'
 import { getAppDailyConversations, getAppDailyEndUsers, getAppStatistics, getAppTokenCosts } from '@/service/apps'
@@ -86,7 +86,7 @@ export type IChartProps = {
   unit?: string
   yMax?: number
   chartType: IChartType
-  chartData: AppDailyConversationsResponse | AppDailyEndUsersResponse | AppTokenCostsResponse | { data: Array<{ date: string; count: number }> } | any
+  chartData: AppDailyConversationsResponse | AppDailyEndUsersResponse | AppTokenCostsResponse | { data: Array<{ date: string; count: number }> }
 }
 
 const Chart: React.FC<IChartProps> = ({
@@ -106,9 +106,10 @@ const Chart: React.FC<IChartProps> = ({
   extraDataForMarkLine.push('')
   extraDataForMarkLine.unshift('')
 
-  const xData = statistics.map(({ date }: any) => date)
+  const xData = statistics.map(({ date }) => date)
   const yField = valueKey || Object.keys(statistics[0]).find(name => name.includes('count')) || ''
-  const yData = statistics.map((item: any) => {
+  const yData = statistics.map((item) => {
+    // @ts-expect-error field is valid
     return item[yField] || 0
   })
 
@@ -224,20 +225,19 @@ const Chart: React.FC<IChartProps> = ({
   const sumData = isAvg ? (sum(yData) / yData.length) : sum(yData)
 
   return (
-    <div className={`flex flex-col w-full px-6 py-4 border-[0.5px] rounded-lg border-[#F1F3F9] shadow-xs ${className ?? ''}`}>
+    <div className={`flex flex-col w-full px-6 py-4 border-[0.5px] rounded-lg border-gray-200 shadow-xs ${className ?? ''}`}>
       <div className='mb-3'>
-        <AppBasic noHeader name={title} type={timePeriod} hoverTip={explanation} />
+        <Basic name={title} type={timePeriod} hoverTip={explanation} />
       </div>
-      <div className='flex-1 mb-4'>
-        <AppBasic
-          noHeader
+      <div className='mb-4 flex-1'>
+        <Basic
           isExtraInLine={CHART_TYPE_CONFIG[chartType].showTokens}
           name={chartType !== 'costs' ? (sumData.toLocaleString() + unit) : `${sumData < 1000 ? sumData : (`${formatNumber(Math.round(sumData / 1000))}k`)}`}
           type={!CHART_TYPE_CONFIG[chartType].showTokens
             ? ''
             : <span>{t('appOverview.analysis.tokenUsage.consumed')} Tokens<span className='text-sm'>
               <span className='ml-1 text-gray-500'>(</span>
-              <span className='text-orange-400'>~{sum(statistics.map((item: any) => parseFloat(get(item, 'total_price', '0')))).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 4 })}</span>
+              <span className='text-orange-400'>~{sum(statistics.map(item => parseFloat(get(item, 'total_price', '0')))).toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 4 })}</span>
               <span className='text-gray-500'>)</span>
             </span></span>}
           textStyle={{ main: `!text-3xl !font-normal ${sumData === 0 ? '!text-gray-300' : ''}` }} />

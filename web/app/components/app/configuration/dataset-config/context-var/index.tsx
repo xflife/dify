@@ -15,7 +15,7 @@ const ContextVar: FC<Props> = (props) => {
   const currItem = options.find(item => item.value === value)
   const notSetVar = !currItem
   return (
-    <div className={cn(notSetVar ? 'rounded-bl-xl rounded-br-xl bg-[#FEF0C7] border-[#FEF0C7]' : 'border-[#F1F3F9]', 'flex justify-between items-center h-12 px-3 border-t ')}>
+    <div className={cn(notSetVar ? 'rounded-bl-xl rounded-br-xl bg-[#FEF0C7] border-[#FEF0C7]' : 'border-gray-200', 'flex justify-between items-center h-12 px-3 border-t ')}>
       <div className='flex items-center space-x-1 shrink-0'>
         <div className='p-1'>
           <BracketsX className='w-4 h-4 text-primary-500'/>

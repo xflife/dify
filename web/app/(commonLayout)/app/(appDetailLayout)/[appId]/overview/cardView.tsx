@@ -4,7 +4,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useContext } from 'use-context-selector'
 import useSWR, { useSWRConfig } from 'swr'
-import UserView from './userView'
 import AppCard from '@/app/components/app/overview/appCard'
 import Loading from '@/app/components/base/loading'
 import { ToastContext } from '@/app/components/base/toast'
@@ -94,7 +93,7 @@ const CardView: FC<ICardViewProps> = ({ appId }) => {
   }
 
   return (
-    <div className="grid w-full grid-cols-1 gap-6 mb-6 xl:grid-cols-2">
+    <div className="grid gap-6 grid-cols-1 xl:grid-cols-2 w-full mb-6">
       <AppCard
         appInfo={response}
         cardType="webapp"
@@ -102,12 +101,11 @@ const CardView: FC<ICardViewProps> = ({ appId }) => {
         onGenerateCode={onGenerateCode}
         onSaveSiteConfig={onSaveSiteConfig}
       />
-      <UserView appId={appId} />
-      {/* <AppCard
+      <AppCard
         cardType="api"
         appInfo={response}
         onChangeStatus={onChangeApiStatus}
-      /> */}
+      />
     </div>
   )
 }

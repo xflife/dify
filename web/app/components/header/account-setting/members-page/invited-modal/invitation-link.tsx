@@ -35,7 +35,7 @@ const InvitationLink = ({
   }, [isCopied])
 
   return (
-    <div className='flex rounded-lg bg-gray-100 hover:bg-gray-100 border border-[#F1F3F9] py-2 items-center'>
+    <div className='flex rounded-lg bg-gray-100 hover:bg-gray-100 border border-gray-200 py-2 items-center'>
       <div className="flex items-center flex-grow h-5">
         <div className='flex-grow bg-gray-100 text-[13px] relative h-full'>
           <Tooltip

@@ -25,7 +25,7 @@ const Forms = () => {
       'md:px-[108px]',
     )
   }>
-    <div className='flex flex-col md:w-[450px]'>
+    <div className='flex flex-col md:w-[400px]'>
       {getForm()}
     </div>
   </div>

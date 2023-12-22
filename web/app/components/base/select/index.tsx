@@ -111,7 +111,7 @@ const Select: FC<ISelectProps> = ({
         </div>
 
         {filteredItems.length > 0 && (
-          <Combobox.Options className={`absolute z-10 mt-1 px-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg border-[#F1F3F9] border-[0.5px] focus:outline-none sm:text-sm ${overlayClassName}`}>
+          <Combobox.Options className={`absolute z-10 mt-1 px-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg border-gray-200 border-[0.5px] focus:outline-none sm:text-sm ${overlayClassName}`}>
             {filteredItems.map((item: Item) => (
               <Combobox.Option
                 key={item.value}
@@ -194,7 +194,7 @@ const SimpleSelect: FC<ISelectProps> = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute z-10 mt-1 px-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg border-[#F1F3F9] border-[0.5px] focus:outline-none sm:text-sm">
+          <Listbox.Options className="absolute z-10 mt-1 px-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg border-gray-200 border-[0.5px] focus:outline-none sm:text-sm">
             {items.map((item: Item) => (
               <Listbox.Option
                 key={item.value}
@@ -257,7 +257,7 @@ const PortalSelect: FC<PortalSelectProps> = ({
       <PortalToFollowElemTrigger onClick={() => setOpen(v => !v)} className='w-full'>
         <div
           className={`
-            flex items-center justify-between px-2.5 h-9 rounded-lg border-0 bg-gray-100 text-sm cursor-pointer
+            flex items-center justify-between px-2.5 h-9 rounded-lg border-0 bg-gray-100 text-sm cursor-pointer 
           `}
           title={selectedItem?.name}
         >
@@ -274,7 +274,7 @@ const PortalSelect: FC<PortalSelectProps> = ({
       </PortalToFollowElemTrigger>
       <PortalToFollowElemContent className={`z-20 ${popupClassName}`}>
         <div
-          className='px-1 py-1 max-h-60 overflow-auto rounded-md bg-white text-base shadow-lg border-[#F1F3F9] border-[0.5px] focus:outline-none sm:text-sm'
+          className='px-1 py-1 max-h-60 overflow-auto rounded-md bg-white text-base shadow-lg border-gray-200 border-[0.5px] focus:outline-none sm:text-sm'
         >
           {items.map((item: Item) => (
             <div

@@ -26,7 +26,7 @@ const List: FC<Props> = ({
   return (
     <div className='overflow-x-auto'>
       <table className={cn(s.logTable, 'w-full min-w-[440px] border-collapse border-0 text-sm')} >
-        <thead className="h-8 leading-8 border-b border-[#F1F3F9] text-gray-500 font-bold">
+        <thead className="h-8 leading-8 border-b border-gray-200 text-gray-500 font-bold">
           <tr className='uppercase'>
             <td className='whitespace-nowrap'>{t('appAnnotation.table.header.question')}</td>
             <td className='whitespace-nowrap'>{t('appAnnotation.table.header.answer')}</td>
@@ -39,7 +39,7 @@ const List: FC<Props> = ({
           {list.map(item => (
             <tr
               key={item.id}
-              className={'border-b border-[#F1F3F9] h-8 hover:bg-gray-50 cursor-pointer'}
+              className={'border-b border-gray-200 h-8 hover:bg-gray-50 cursor-pointer'}
               onClick={
                 () => {
                   onView(item)

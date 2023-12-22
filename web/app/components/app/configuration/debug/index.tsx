@@ -512,11 +512,11 @@ const Debug: FC<IDebug> = ({
         <div className='flex items-center justify-between mb-2'>
           <div className='h2 '>{t('appDebug.inputs.title')}</div>
           {mode === 'chat' && (
-            <Button className='flex items-center gap-1 !h-8 !bg-[#19243B] !rounded-2xl' onClick={clearConversation}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M14.6615 3.98856C14.4008 3.89449 14.1132 4.03157 14.0219 4.29228L13.6348 5.37811C13.1806 4.35409 12.463 3.45371 11.5492 2.77909C8.64373 0.628913 4.50464 1.21484 2.32759 4.0907C1.274 5.48294 0.82784 7.1977 1.07511 8.91784C1.32238 10.646 2.23889 12.1754 3.64995 13.2209C4.83254 14.0944 6.21672 14.5191 7.59014 14.5191C9.59787 14.5191 11.5787 13.6187 12.8715 11.912C13.444 11.1567 13.8337 10.3128 14.0353 9.39894C14.0944 9.12748 13.9224 8.8614 13.6536 8.80227C13.3849 8.74314 13.1161 8.91247 13.057 9.18393C12.8876 9.9553 12.5571 10.6702 12.0733 11.3072C10.2268 13.745 6.71395 14.2422 4.24662 12.4146C3.05058 11.5303 2.27652 10.2375 2.06688 8.77539C1.85724 7.32134 2.23352 5.87265 3.12584 4.69543C4.96962 2.25767 8.47978 1.75776 10.9498 3.58541C11.8448 4.24658 12.514 5.1631 12.8769 6.19787L11.1541 5.52594C10.896 5.42649 10.6058 5.55282 10.5036 5.81084C10.4015 6.06886 10.5305 6.35913 10.7885 6.46127L13.3257 7.45303C13.3849 7.47722 13.4467 7.48798 13.5085 7.48798C13.5166 7.48798 13.5246 7.48529 13.5327 7.48529C13.5515 7.48798 13.5703 7.49604 13.5891 7.49604C13.7961 7.49604 13.9896 7.36703 14.0622 7.16276L14.9652 4.6363C15.0566 4.37022 14.9222 4.08263 14.6615 3.98856Z" fill="white"/>
+            <Button className='flex items-center gap-1 !h-8 !bg-white' onClick={clearConversation}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.66663 2.66629V5.99963H3.05463M3.05463 5.99963C3.49719 4.90505 4.29041 3.98823 5.30998 3.39287C6.32954 2.7975 7.51783 2.55724 8.68861 2.70972C9.85938 2.8622 10.9465 3.39882 11.7795 4.23548C12.6126 5.07213 13.1445 6.16154 13.292 7.33296M3.05463 5.99963H5.99996M13.3333 13.333V9.99963H12.946M12.946 9.99963C12.5028 11.0936 11.7093 12.0097 10.6898 12.6045C9.67038 13.1993 8.48245 13.4393 7.31203 13.2869C6.1416 13.1344 5.05476 12.5982 4.22165 11.7621C3.38854 10.926 2.8562 9.83726 2.70796 8.66629M12.946 9.99963H9.99996" stroke="#1C64F2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className='text-white text-[13px]'>{t('common.operation.refresh')}</span>
+              <span className='text-primary-600 text-[13px] font-semibold'>{t('common.operation.refresh')}</span>
             </Button>
           )}
         </div>
@@ -536,7 +536,7 @@ const Debug: FC<IDebug> = ({
         {mode === AppType.chat && (
           <div className="mt-[34px] h-full flex flex-col">
             <div className={cn(doShowSuggestion ? 'pb-[140px]' : (isResponsing ? 'pb-[113px]' : 'pb-[76px]'), 'relative mt-1.5 grow h-[200px] overflow-hidden')}>
-              <div className="h-full overflow-x-hidden overflow-y-auto" ref={chatListDomRef}>
+              <div className="h-full overflow-y-auto overflow-x-hidden" ref={chatListDomRef}>
                 <Chat
                   chatList={chatList}
                   onSend={onSend}

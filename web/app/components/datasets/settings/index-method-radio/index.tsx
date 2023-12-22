@@ -8,7 +8,7 @@ const itemClass = `
   w-full sm:w-[234px] p-3 rounded-xl bg-gray-25 border border-gray-100 cursor-pointer
 `
 const radioClass = `
-  w-4 h-4 border-[2px] border-[#F1F3F9] rounded-full
+  w-4 h-4 border-[2px] border-gray-200 rounded-full
 `
 type IIndexMethodRadioProps = {
   value?: DataSet['indexing_technique']

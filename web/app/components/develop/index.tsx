@@ -25,11 +25,11 @@ const DevelopMain = ({ appId, dictionary }: IDevelopMainProps) => {
         <div className='text-lg font-medium text-gray-900'>{dictionary.app?.develop?.title}</div>
         <div className='flex items-center flex-wrap gap-y-1'>
           <InputCopy className='flex-shrink-0 mr-1 w-52 sm:w-80' value={appDetail?.api_base_url}>
-            <div className={`ml-2 border border-[#F1F3F9] border-solid flex-shrink-0 px-2 py-0.5 rounded-[6px] text-gray-500 text-[0.625rem] ${s.customApi}`}>
+            <div className={`ml-2 border border-gray-200 border-solid flex-shrink-0 px-2 py-0.5 rounded-[6px] text-gray-500 text-[0.625rem] ${s.customApi}`}>
               {t('appApi.apiServer')}
             </div>
           </InputCopy>
-          <div className={`flex items-center h-9 px-3 rounded-lg
+          <div className={`flex items-center h-9 px-3 rounded-lg 
                         text-[13px] font-normal  mr-2 ${appDetail?.enable_api ? 'text-green-500 bg-green-50' : 'text-yellow-500 bg-yellow-50'}`}>
             <div className='mr-1'>{t('appApi.status')}</div>
             <div className='font-semibold'>{appDetail?.enable_api ? `${t('appApi.ok')}` : `${t('appApi.disabled')}`}</div>

@@ -68,7 +68,7 @@ const Popup: FC<PopupProps> = ({
                     {
                       showHitInfo && (
                         <div className='flex items-center justify-between mb-2'>
-                          <div className='flex items-center px-1.5 h-5 border border-[#F1F3F9] rounded-md'>
+                          <div className='flex items-center px-1.5 h-5 border border-gray-200 rounded-md'>
                             <Hash02 className='mr-0.5 w-3 h-3 text-gray-400' />
                             <div className='text-[11px] font-medium text-gray-500'>{source.segment_position}</div>
                           </div>

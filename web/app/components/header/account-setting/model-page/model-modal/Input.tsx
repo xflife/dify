@@ -39,7 +39,7 @@ const Input: FC<InputProps> = ({
         tabIndex={-1}
         className={`
           block px-3 w-full h-9 bg-gray-100 text-sm rounded-lg border border-transparent
-          appearance-none outline-none caret-[#dfe1e7]
+          appearance-none outline-none caret-primary-600
           hover:border-[rgba(0,0,0,0.08)] hover:bg-gray-50
           focus:bg-white focus:border-gray-300 focus:shadow-xs
           placeholder:text-sm placeholder:text-gray-400

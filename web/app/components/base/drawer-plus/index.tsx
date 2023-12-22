@@ -35,7 +35,7 @@ const DrawerPlus: FC<Props> = ({
     // clickOutsideNotOpen to fix confirm modal click cause drawer close
     <Drawer isOpen={isShow} clickOutsideNotOpen onClose={onHide} footer={null} mask={isMobile} panelClassname={`mt-16 mx-2 sm:mr-2 mb-3 !p-0 ${maxWidthClassName} rounded-xl`}>
       <div
-        className='w-full flex flex-col bg-white border-[0.5px] border-[#F1F3F9] rounded-xl shadow-xl'
+        className='w-full flex flex-col bg-white border-[0.5px] border-gray-200 rounded-xl shadow-xl'
         style={{
           height,
         }}

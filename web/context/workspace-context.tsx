@@ -10,20 +10,20 @@ export type WorkspacesContextValue = {
 }
 
 const WorkspacesContext = createContext<WorkspacesContextValue>({
-  workspaces: [],
+  workspaces: []
 })
 
-type IWorkspaceProviderProps = {
+interface IWorkspaceProviderProps {
   children: React.ReactNode
 }
 export const WorkspaceProvider = ({
-  children,
+  children
 }: IWorkspaceProviderProps) => {
   const { data } = useSWR({ url: '/workspaces' }, fetchWorkspaces)
 
   return (
     <WorkspacesContext.Provider value={{
-      workspaces: data?.workspaces || [],
+      workspaces: data?.workspaces || []
     }}>
       {children}
     </WorkspacesContext.Provider>

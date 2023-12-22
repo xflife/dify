@@ -85,7 +85,7 @@ const NotionPageSelector = ({
   }, [firstWorkspaceId])
 
   return (
-    <div className='bg-gray-25 border border-[#F1F3F9] rounded-xl'>
+    <div className='bg-gray-25 border border-gray-200 rounded-xl'>
       {
         data?.notion_info?.length
           ? (

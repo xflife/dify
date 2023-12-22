@@ -92,7 +92,7 @@ const Sidebar: FC<ISidebarProps> = ({
       className={
         cn(
           (isInstalledApp || isUniversalChat) ? 'tablet:h-[calc(100vh_-_74px)]' : '',
-          'shrink-0 flex flex-col bg-white pc:w-[244px] tablet:w-[192px] mobile:w-[240px]  border-r border-[#F1F3F9] mobile:h-screen',
+          'shrink-0 flex flex-col bg-white pc:w-[244px] tablet:w-[192px] mobile:w-[240px]  border-r border-gray-200 mobile:h-screen',
         )
       }
     >

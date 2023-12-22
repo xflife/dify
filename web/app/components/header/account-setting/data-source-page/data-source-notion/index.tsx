@@ -44,7 +44,7 @@ const DataSourceNotion = ({
   }, [data])
 
   return (
-    <div className='mb-2 border-[0.5px] border-[#F1F3F9] bg-gray-50 rounded-xl'>
+    <div className='mb-2 border-[0.5px] border-gray-200 bg-gray-50 rounded-xl'>
       <div className='flex items-center px-3 py-[9px]'>
         <div className={cn(s['notion-icon'], 'w-8 h-8 mr-3 border border-gray-100 rounded-lg')} />
         <div className='grow'>
@@ -64,7 +64,7 @@ const DataSourceNotion = ({
             ? (
               <div
                 className={
-                  `flex items-center ml-3 px-3 h-7 bg-white border border-[#F1F3F9]
+                  `flex items-center ml-3 px-3 h-7 bg-white border border-gray-200
                   rounded-md text-xs font-medium text-gray-700
                   ${isCurrentWorkspaceManager ? 'cursor-pointer' : 'grayscale opacity-50 cursor-default'}`
                 }
@@ -76,7 +76,7 @@ const DataSourceNotion = ({
             : (
               <div
                 className={
-                  `flex items-center px-3 py-1 min-h-7 bg-white border-[0.5px] border-[#F1F3F9] text-xs font-medium text-primary-600 rounded-md
+                  `flex items-center px-3 py-1 min-h-7 bg-white border-[0.5px] border-gray-200 text-xs font-medium text-primary-600 rounded-md
                   ${isCurrentWorkspaceManager ? 'cursor-pointer' : 'grayscale opacity-50 cursor-default'}`
                 }
                 onClick={handleConnectNotion}

@@ -1,29 +1,26 @@
 'use client'
 import React from 'react'
-// import { useContext } from 'use-context-selector'
-// import Select, { LOCALES } from '@/app/components/base/select/locale'
-// import { type Locale } from '@/i18n'
-// import I18n from '@/context/i18n'
-// import LogoSite from '@/app/components/base/logo/logo-site'
+import { useContext } from 'use-context-selector'
+import Select, { LOCALES } from '@/app/components/base/select/locale'
+import { type Locale } from '@/i18n'
+import I18n from '@/context/i18n'
+import LogoSite from '@/app/components/base/logo/logo-site'
 
 const Header = () => {
-  // const { locale, setLocaleOnClient } = useContext(I18n)
+  const { locale, setLocaleOnClient } = useContext(I18n)
 
   if (localStorage?.getItem('console_token'))
     localStorage.removeItem('console_token')
 
-  return <div className='flex items-center justify-between w-full p-6'>
-    {/* <LogoSite /> */}
-    <div className='text-[32px] font-bold text-gray-900'>
-      iPollo.AI
-    </div>
-    {/* <Select
+  return <div className='flex items-center justify-between p-6 w-full'>
+    <LogoSite />
+    <Select
       value={locale}
       items={LOCALES}
       onChange={(value) => {
         setLocaleOnClient(value as Locale)
       }}
-    /> */}
+    />
 
   </div>
 }

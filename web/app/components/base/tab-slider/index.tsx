@@ -24,7 +24,7 @@ const TabSlider: FC<TabSliderProps> = ({
           <div
             key={option.value}
             className={`
-              flex justify-center items-center w-[118px] h-7 text-[13px]
+              flex justify-center items-center w-[118px] h-7 text-[13px] 
               font-semibold text-gray-600 rounded-[7px] cursor-pointer
               hover:bg-gray-50
               ${index !== options.length - 1 && 'mr-[1px]'}
@@ -39,8 +39,8 @@ const TabSlider: FC<TabSliderProps> = ({
         current && (
           <div
             className={`
-              absolute flex justify-center items-center w-[118px] h-7 bg-white text-[13px] font-semibold text-primary-600
-              border-[0.5px] border-[#F1F3F9] rounded-[7px] shadow-xs transition-transform
+              absolute flex justify-center items-center w-[118px] h-7 bg-white text-[13px] font-semibold text-primary-600 
+              border-[0.5px] border-gray-200 rounded-[7px] shadow-xs transition-transform
             `}
             style={{ transform: `translateX(${currentIndex * 118 + 1}px)` }}
           >

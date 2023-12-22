@@ -222,7 +222,3 @@ type FileTypesRes = {
 export const fetchSupportFileTypes: Fetcher<FileTypesRes, { url: string }> = ({ url }) => {
   return get<FileTypesRes>(url)
 }
-
-export const fetchDataDetail: Fetcher<DataSet, string> = (datasetId: string) => {
-  return get(`/datasets/${datasetId}`) as Promise<DataSet>
-}

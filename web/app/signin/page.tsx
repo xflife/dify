@@ -10,21 +10,20 @@ const SignIn = () => {
       <div className={cn(
         style.background,
         'flex w-full min-h-screen',
-        'sm:p-10 lg:p-20',
-        'gap-x-25',
-        'justify-center lg:justify-center',
+        'sm:p-4 lg:p-8',
+        'gap-x-20',
+        'justify-center lg:justify-start',
       )}>
         <div className={
           cn(
-            'flex w-5/6 flex-col bg-white shadow rounded-2xl shrink-0',
+            'flex w-full flex-col bg-white shadow rounded-2xl shrink-0',
             'space-between',
           )
         }>
           <Header />
           <Forms />
-          <div className='flex justify-between px-8 py-6 text-sm font-normal text-gray-500'>
-            <div>V1.1.0</div>
-            <div>© {new Date().getFullYear()} LangGenius, Inc. All rights reserved.</div>
+          <div className='px-8 py-6 text-sm font-normal text-gray-500'>
+            © {new Date().getFullYear()} LangGenius, Inc. All rights reserved.
           </div>
         </div>
 

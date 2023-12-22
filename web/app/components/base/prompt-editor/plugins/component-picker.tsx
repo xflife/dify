@@ -13,7 +13,7 @@ import { INSERT_CONTEXT_BLOCK_COMMAND } from './context-block'
 import { INSERT_VARIABLE_BLOCK_COMMAND } from './variable-block'
 import { INSERT_HISTORY_BLOCK_COMMAND } from './history-block'
 import { INSERT_QUERY_BLOCK_COMMAND } from './query-block'
-import TypeIcon from '@/app/components/app/configuration/dataset-config/type-icon'
+import { File05 } from '@/app/components/base/icons/src/vender/solid/files'
 import { Variable } from '@/app/components/base/icons/src/vender/line/development'
 import { MessageClockCircle } from '@/app/components/base/icons/src/vender/solid/general'
 import { UserEdit02 } from '@/app/components/base/icons/src/vender/solid/users'
@@ -67,7 +67,7 @@ const ComponentPickerMenuItem: FC<ComponentPickerMenuItemProps> = ({
     <div
       key={option.key}
       className={`
-        flex items-center px-3 py-1.5 rounded-lg
+        flex items-center px-3 py-1.5 rounded-lg 
         ${isSelected && !option.disabled && '!bg-gray-50'}
         ${option.disabled ? 'cursor-not-allowed opacity-30' : 'hover:bg-gray-50 cursor-pointer'}
       `}
@@ -75,7 +75,7 @@ const ComponentPickerMenuItem: FC<ComponentPickerMenuItemProps> = ({
       ref={option.setRefElement}
       onMouseEnter={onMouseEnter}
       onClick={onClick}>
-      <div className='flex items-center justify-center w-8 h-8 mr-2 border border-gray-100 rounded-lg'>
+      <div className='flex items-center justify-center mr-2 w-8 h-8 rounded-lg border border-gray-100'>
         {option.icon}
       </div>
       <div className='grow'>
@@ -117,7 +117,7 @@ const ComponentPicker: FC<ComponentPickerProps> = ({
       ? [
         new ComponentPickerOption(t('common.promptEditor.context.item.title'), {
           desc: t('common.promptEditor.context.item.desc'),
-          icon: <TypeIcon type="upload_file" />,
+          icon: <File05 className='w-4 h-4 text-[#6938EF]' />,
           onSelect: () => {
             if (contextDisabled)
               return
@@ -129,7 +129,7 @@ const ComponentPicker: FC<ComponentPickerProps> = ({
       : [],
     new ComponentPickerOption(t('common.promptEditor.variable.item.title'), {
       desc: t('common.promptEditor.variable.item.desc'),
-      icon: <Variable className='w-4 h-4 text-[#EC966D]' />,
+      icon: <Variable className='w-4 h-4 text-[#2970FF]' />,
       onSelect: () => {
         editor.dispatchCommand(INSERT_VARIABLE_BLOCK_COMMAND, undefined)
       },
@@ -193,7 +193,7 @@ const ComponentPicker: FC<ComponentPickerProps> = ({
       ) =>
         (anchorElementRef.current && options.length)
           ? ReactDOM.createPortal(
-            <div className='mt-[25px] p-1 w-[400px] bg-white rounded-lg border-[0.5px] border-[#F1F3F9] shadow-lg'>
+            <div className='mt-[25px] p-1 w-[400px] bg-white rounded-lg border-[0.5px] border-gray-200 shadow-lg'>
               {options.map((option, i: number) => (
                 <ComponentPickerMenuItem
                   isSelected={selectedIndex === i}

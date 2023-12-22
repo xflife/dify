@@ -5,36 +5,30 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 export let apiPrefix = ''
 export let publicApiPrefix = ''
-export let userApiPrefix = ''
 
 // NEXT_PUBLIC_API_PREFIX=/console/api NEXT_PUBLIC_PUBLIC_API_PREFIX=/api npm run start
-if (process.env.NEXT_PUBLIC_API_PREFIX && process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX && process.env.NEXT_PUBLIC_USER_API_PREFIX) {
+if (process.env.NEXT_PUBLIC_API_PREFIX && process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX) {
   apiPrefix = process.env.NEXT_PUBLIC_API_PREFIX
   publicApiPrefix = process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX
-  userApiPrefix = process.env.NEXT_PUBLIC_USER_API_PREFIX
 }
 else if (
   globalThis.document?.body?.getAttribute('data-api-prefix')
   && globalThis.document?.body?.getAttribute('data-pubic-api-prefix')
-  && globalThis.document?.body?.getAttribute('data-pubic-user-api-prefix')
 ) {
   // Not bulild can not get env from process.env.NEXT_PUBLIC_ in browser https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser
   apiPrefix = globalThis.document.body.getAttribute('data-api-prefix') as string
   publicApiPrefix = globalThis.document.body.getAttribute('data-pubic-api-prefix') as string
-  userApiPrefix = globalThis.document.body.getAttribute('data-pubic-user-api-prefix') as string
 }
 else {
   if (isDevelopment) {
-    apiPrefix = 'https://gpt.metaio.cc/console/api'
-    publicApiPrefix = 'https://gpt.metaio.cc/api'
-    userApiPrefix = 'https://1975757210585658.cn-hangzhou.fc.aliyuncs.com/2016-08-15/proxy/flow/api/'
+    apiPrefix = 'https://cloud.dify.dev/console/api'
+    publicApiPrefix = 'https://dev.udify.app/api'
   }
   else {
     // const domainParts = globalThis.location?.host?.split('.');
     // in production env, the host is dify.app . In other env, the host is [dev].dify.app
     // const env = domainParts.length === 2 ? 'ai' : domainParts?.[0];
     apiPrefix = '/console/api'
-    userApiPrefix = '/console/api'
     publicApiPrefix = '/api' // avoid browser private mode api cross origin
   }
 }
@@ -43,7 +37,7 @@ export const API_PREFIX: string = apiPrefix
 export const PUBLIC_API_PREFIX: string = publicApiPrefix
 
 const EDITION = process.env.NEXT_PUBLIC_EDITION || globalThis.document?.body?.getAttribute('data-public-edition')
-export const IS_CE_EDITION = EDITION !== 'SELF_HOSTED'
+export const IS_CE_EDITION = EDITION === 'SELF_HOSTED'
 
 export const MODEL_LIST = [
   { id: 'gpt-3.5-turbo', name: 'gpt-3.5-turbo', type: AppType.chat },

@@ -318,7 +318,7 @@ const DocumentList: FC<IDocumentListProps> = ({ embeddingAvailable, documents = 
   return (
     <div className='w-full h-full overflow-x-auto'>
       <table className={`min-w-[700px] max-w-full w-full border-collapse border-0 text-sm mt-3 ${s.documentTable}`}>
-        <thead className="h-8 leading-8 border-b border-[#F1F3F9] text-gray-500 font-medium text-xs uppercase">
+        <thead className="h-8 leading-8 border-b border-gray-200 text-gray-500 font-medium text-xs uppercase">
           <tr>
             <td className='w-12'>#</td>
             <td>{t('datasetDocuments.list.table.header.fileName')}</td>
@@ -339,7 +339,7 @@ const DocumentList: FC<IDocumentListProps> = ({ embeddingAvailable, documents = 
             const suffix = doc.name.split('.').pop() || 'txt'
             return <tr
               key={doc.id}
-              className={'border-b border-[#F1F3F9] h-8 hover:bg-gray-50 cursor-pointer'}
+              className={'border-b border-gray-200 h-8 hover:bg-gray-50 cursor-pointer'}
               onClick={() => {
                 router.push(`/datasets/${datasetId}/documents/${doc.id}`)
               }}>

@@ -757,7 +757,7 @@ const Main: FC<IMainProps> = () => {
                     plugins={plugins}
                     dataSets={dataSets}
                   />
-                  <div className={cn('flex w-8 h-8 justify-center items-center shrink-0 rounded-lg border border-[#F1F3F9]')} onClick={e => e.stopPropagation()}>
+                  <div className={cn('flex w-8 h-8 justify-center items-center shrink-0 rounded-lg border border-gray-200')} onClick={e => e.stopPropagation()}>
                     <ItemOperation
                       key={controlItemOpHide}
                       className='!w-8 !h-8'

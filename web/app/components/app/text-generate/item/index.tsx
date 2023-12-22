@@ -56,7 +56,7 @@ export const SimpleBtn = ({ className, isDisabled, onClick, children }: {
   children: React.ReactNode
 }) => (
   <div
-    className={cn(className, isDisabled ? 'border-gray-100 text-gray-300' : 'border-[#F1F3F9] text-gray-700 cursor-pointer hover:border-gray-300 hover:shadow-sm', 'flex items-center h-7 px-3 rounded-md border text-xs  font-medium')}
+    className={cn(className, isDisabled ? 'border-gray-100 text-gray-300' : 'border-gray-200 text-gray-700 cursor-pointer hover:border-gray-300 hover:shadow-sm', 'flex items-center h-7 px-3 rounded-md border text-xs  font-medium')}
     onClick={() => !isDisabled && onClick?.()}
   >
     {children}
@@ -232,7 +232,7 @@ const GenerationItem: FC<IGenerationItemProps> = ({
   )
 
   return (
-    <div ref={ref} className={cn(className, isTop ? `rounded-xl border ${!isError ? 'border-[#F1F3F9] bg-white' : 'border-[#FECDCA] bg-[#FEF3F2]'} ` : 'rounded-br-xl !mt-0')}
+    <div ref={ref} className={cn(className, isTop ? `rounded-xl border ${!isError ? 'border-gray-200 bg-white' : 'border-[#FECDCA] bg-[#FEF3F2]'} ` : 'rounded-br-xl !mt-0')}
       style={isTop
         ? {
           boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
@@ -249,7 +249,7 @@ const GenerationItem: FC<IGenerationItemProps> = ({
             style={mainStyle}
           >
             {(isTop && taskId) && (
-              <div className='mb-2 text-gray-500 border border-[#F1F3F9] box-border flex items-center rounded-md italic text-[11px] pl-1 pr-1.5 font-medium w-fit group-hover:opacity-100'>
+              <div className='mb-2 text-gray-500 border border-gray-200 box-border flex items-center rounded-md italic text-[11px] pl-1 pr-1.5 font-medium w-fit group-hover:opacity-100'>
                 <HashtagIcon className='w-3 h-3 text-gray-400 fill-current mr-1 stroke-current stroke-1' />
                 {taskId}
               </div>)

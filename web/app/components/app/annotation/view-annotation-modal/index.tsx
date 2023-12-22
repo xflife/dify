@@ -112,7 +112,7 @@ const ViewAnnotationModal: FC<Props> = ({
     : (
       <div>
         <table className={cn(s.table, 'w-full min-w-[440px] border-collapse border-0 text-sm')} >
-          <thead className="h-8 leading-8 border-b border-[#F1F3F9] text-gray-500 font-bold">
+          <thead className="h-8 leading-8 border-b border-gray-200 text-gray-500 font-bold">
             <tr className='uppercase'>
               <td className='whitespace-nowrap'>{t('appAnnotation.hitHistoryTable.query')}</td>
               <td className='whitespace-nowrap'>{t('appAnnotation.hitHistoryTable.match')}</td>
@@ -126,7 +126,7 @@ const ViewAnnotationModal: FC<Props> = ({
             {hitHistoryList.map(item => (
               <tr
                 key={item.id}
-                className={'border-b border-[#F1F3F9] h-8 hover:bg-gray-50 cursor-pointer'}
+                className={'border-b border-gray-200 h-8 hover:bg-gray-50 cursor-pointer'}
               >
                 <td
                   className='whitespace-nowrap overflow-hidden text-ellipsis max-w-[250px]'

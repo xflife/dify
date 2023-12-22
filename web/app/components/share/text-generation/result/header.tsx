@@ -75,7 +75,7 @@ const Header: FC<IResultHeaderProps> = ({
         )}
 
         {showFeedback && !feedback.rating && (
-          <div className='flex rounded-lg border border-[#F1F3F9] p-[1px] space-x-1'>
+          <div className='flex rounded-lg border border-gray-200 p-[1px] space-x-1'>
             <Tooltip
               selector="feedback-like"
               content="Great Rating"

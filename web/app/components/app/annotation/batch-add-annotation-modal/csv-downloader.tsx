@@ -36,11 +36,11 @@ const CSVDownload: FC = () => {
     <div className='mt-6'>
       <div className='text-sm text-gray-900 font-medium'>{t('share.generation.csvStructureTitle')}</div>
       <div className='mt-2 max-h-[500px] overflow-auto'>
-        <table className='table-fixed w-full border-separate border-spacing-0 border border-[#F1F3F9] rounded-lg text-xs'>
+        <table className='table-fixed w-full border-separate border-spacing-0 border border-gray-200 rounded-lg text-xs'>
           <thead className='text-gray-500'>
             <tr>
-              <td className='h-9 pl-3 pr-2 border-b border-[#F1F3F9]'>{t('appAnnotation.batchModal.question')}</td>
-              <td className='h-9 pl-3 pr-2 border-b border-[#F1F3F9]'>{t('appAnnotation.batchModal.answer')}</td>
+              <td className='h-9 pl-3 pr-2 border-b border-gray-200'>{t('appAnnotation.batchModal.question')}</td>
+              <td className='h-9 pl-3 pr-2 border-b border-gray-200'>{t('appAnnotation.batchModal.answer')}</td>
             </tr>
           </thead>
           <tbody className='text-gray-700'>

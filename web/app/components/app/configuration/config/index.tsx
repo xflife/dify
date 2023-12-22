@@ -1,9 +1,9 @@
 'use client'
-// import type { FC } from 'react'
-import React from 'react'
+import type { FC } from 'react'
+import React, { useRef } from 'react'
 import { useContext } from 'use-context-selector'
 import produce from 'immer'
-import { useBoolean } from 'ahooks'
+import { useBoolean, useScroll } from 'ahooks'
 import DatasetConfig from '../dataset-config'
 import Tools from '../tools'
 import ChatGroup from '../features/chat-group'
@@ -15,7 +15,6 @@ import useAnnotationConfig from '../toolbox/annotation/use-annotation-config'
 import AddFeatureBtn from './feature/add-feature-btn'
 import ChooseFeature from './feature/choose-feature'
 import useFeature from './feature/use-feature'
-import ConfigPlugin from '@/app/components/app/configuration/config-plugin'
 import AdvancedModeWaring from '@/app/components/app/configuration/prompt-mode/advanced-mode-waring'
 import ConfigContext from '@/context/debug-configuration'
 import ConfigPrompt from '@/app/components/app/configuration/config-prompt'
@@ -27,7 +26,7 @@ import { useModalContext } from '@/context/modal-context'
 import ConfigParamModal from '@/app/components/app/configuration/toolbox/annotation/config-param-modal'
 import AnnotationFullModal from '@/app/components/billing/annotation-full/modal'
 
-const Config = ({ strategy, saveStrategy, ExtraHeader, ExtraSwitch }: { strategy?: any; saveStrategy?: any; ExtraHeader: any; ExtraSwitch: any }) => {
+const Config: FC = () => {
   const {
     appId,
     mode,
@@ -173,19 +172,24 @@ const Config = ({ strategy, saveStrategy, ExtraHeader, ExtraSwitch }: { strategy
   const hasChatConfig = isChatApp && (featureConfig.openingStatement || featureConfig.suggestedQuestionsAfterAnswer || (featureConfig.speechToText && !!speech2textDefaultModel) || featureConfig.citation)
   const hasToolbox = moderationConfig.enabled || featureConfig.annotation
 
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const wrapScroll = useScroll(wrapRef)
+  const toBottomHeight = (() => {
+    if (!wrapRef.current)
+      return 999
+    const elem = wrapRef.current
+    const { clientHeight } = elem
+    const value = (wrapScroll?.top || 0) + clientHeight
+    return value
+  })()
+
   return (
     <>
       <div
+        ref={wrapRef}
         className="relative px-6 pb-[50px] overflow-y-auto h-full"
       >
-        <div
-          className="flex items-center justify-between py-3 mt-4"
-        >
-          <AddFeatureBtn onClick={showChooseFeatureTrue} />
-          <ExtraHeader />
-          {/* <AutomaticBtn onClick={showAutomaticTrue} /> */}
-        </div>
-        <ExtraSwitch />
+        <AddFeatureBtn toBottomHeight={toBottomHeight} onClick={showChooseFeatureTrue} />
         {
           (isAdvancedMode && canReturnToSimpleMode) && (
             <AdvancedModeWaring />
@@ -209,9 +213,6 @@ const Config = ({ strategy, saveStrategy, ExtraHeader, ExtraSwitch }: { strategy
           promptVariables={promptVariables}
           onChange={handlePromptChange}
         />
-
-        {/* Plugins */}
-        <ConfigPlugin defaultStrategy={strategy} saveStrategy={saveStrategy} />
 
         {/* Variables */}
         <ConfigVar

@@ -16,7 +16,7 @@ type IAccountSettingProps = {
   onCancel: () => void
 }
 const buttonClassName = `
-shrink-0 flex items-center h-8 px-3 rounded-lg border border-[#F1F3F9]
+shrink-0 flex items-center h-8 px-3 rounded-lg border border-gray-200
 text-xs text-gray-800 font-medium
 `
 export default function AccountAbout({

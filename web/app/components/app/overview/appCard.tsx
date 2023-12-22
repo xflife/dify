@@ -4,6 +4,7 @@ import React, { useMemo, useState } from 'react'
 import {
   Cog8ToothIcon,
   DocumentTextIcon,
+  PaintBrushIcon,
   RocketLaunchIcon,
 } from '@heroicons/react/24/outline'
 import { usePathname, useRouter } from 'next/navigation'
@@ -63,7 +64,7 @@ function AppCard({
     const operationsMap = {
       webapp: [
         { opName: t('appOverview.overview.appInfo.preview'), opIcon: RocketLaunchIcon },
-        // { opName: t('appOverview.overview.appInfo.customize.entry'), opIcon: PaintBrushIcon },
+        { opName: t('appOverview.overview.appInfo.customize.entry'), opIcon: PaintBrushIcon },
       ] as { opName: string; opIcon: any }[],
       api: [{ opName: t('appOverview.overview.apiInfo.doc'), opIcon: DocumentTextIcon }],
       app: [],
@@ -128,19 +129,16 @@ function AppCard({
 
   return (
     <div
-      className={`shadow-xs border-[0.5px] rounded-lg border-[#F1F3F9] ${
+      className={`shadow-xs border-[0.5px] rounded-lg border-gray-200 ${
         className ?? ''
       }`}
     >
-      <div className={`px-6 py-5 ${customBgColor ?? bgColor} rounded-lg`} style={{
-        background:
-            'url(https://assets.metaio.cc/assets/difyassets/appoverviewbg.png)',
-      }}>
+      <div className={`px-6 py-5 ${customBgColor ?? bgColor} rounded-lg`}>
         <div className="mb-2.5 flex flex-row items-start justify-between">
           <AppBasic
-            // iconType={cardType}
-            // icon={appInfo.icon}
-            // icon_background={appInfo.icon_background}
+            iconType={cardType}
+            icon={appInfo.icon}
+            icon_background={appInfo.icon_background}
             name={basicName}
             type={
               isApp
@@ -165,8 +163,8 @@ function AppCard({
                 : t('appOverview.overview.apiInfo.accessibleAddress')}
             </div>
             <div className="w-full h-9 pl-2 pr-0.5 py-0.5 bg-black bg-opacity-[0.02] rounded-lg border border-black border-opacity-5 justify-start items-center inline-flex">
-              <div className="flex items-start justify-start flex-1 h-4 min-w-0 gap-2 px-2">
-                <div className="overflow-hidden text-xs font-medium text-gray-700 text-ellipsis whitespace-nowrap">
+              <div className="h-4 px-2 justify-start items-start gap-2 flex flex-1 min-w-0">
+                <div className="text-gray-700 text-xs font-medium text-ellipsis overflow-hidden whitespace-nowrap">
                   {isApp ? appUrl : apiUrl}
                 </div>
               </div>

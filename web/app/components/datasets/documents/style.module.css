@@ -18,7 +18,7 @@
   @apply h-6 w-6 rounded-md border-none p-1 hover:bg-gray-100 !important;
 }
 .actionIconWrapperDetail {
-  @apply h-8 w-8 p-2 hover:bg-gray-50 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-[0_1px_2px_rgba(16,24,40,0.05)] !important;
+  @apply h-8 w-8 p-2 hover:bg-gray-50 border border-gray-200 hover:border-gray-300 hover:shadow-[0_1px_2px_rgba(16,24,40,0.05)] !important;
 }
 .actionItem {
   @apply h-9 py-2 px-3 mx-1 flex items-center gap-2 hover:bg-gray-100 rounded-lg cursor-pointer;
@@ -91,7 +91,7 @@
   background-image: url(~@/assets/docx.svg);
 }
 .statusItemDetail {
-  @apply h-8 font-medium border border-[#F1F3F9] inline-flex items-center rounded-lg pl-3 pr-4 mr-2;
+  @apply h-8 font-medium border border-gray-200 inline-flex items-center rounded-lg pl-3 pr-4 mr-2;
 }
 .tdValue {
   @apply text-sm overflow-hidden text-ellipsis whitespace-nowrap;

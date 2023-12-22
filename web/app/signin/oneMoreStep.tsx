@@ -108,7 +108,7 @@ const OneMoreStep = () => {
                 value={state.invitation_code}
                 type="text"
                 placeholder={t('login.invitationCodePlaceholder') || ''}
-                className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-[#F1F3F9] hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-[#DFE1E7] placeholder-gray-400 caret-[#dfe1e7] sm:text-sm'}
+                className={'appearance-none block w-full rounded-lg pl-[14px] px-3 py-2 border border-gray-200 hover:border-gray-300 hover:shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 caret-primary-600 sm:text-sm'}
                 onChange={(e) => {
                   dispatch({ type: 'invitation_code', value: e.target.value.trim() })
                 }}

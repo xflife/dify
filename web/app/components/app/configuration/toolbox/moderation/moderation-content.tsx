@@ -27,7 +27,7 @@ const ModerationContent: FC<ModerationContentProps> = ({
 
   return (
     <div className='py-2'>
-      <div className='rounded-lg bg-gray-50 border border-[#F1F3F9]'>
+      <div className='rounded-lg bg-gray-50 border border-gray-200'>
         <div className='flex items-center justify-between px-3 h-10 rounded-lg'>
           <div className='shrink-0 text-sm font-medium text-gray-900'>{title}</div>
           <div className='grow flex items-center justify-end'>

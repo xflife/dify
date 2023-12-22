@@ -92,7 +92,7 @@ const PromptValuePanel: FC<IPromptValuePanelProps> = ({
   }
 
   return (
-    <div className="pb-3 border border-[#F1F3F9] bg-white rounded-xl" style={{
+    <div className="pb-3 border border-gray-200 bg-white rounded-xl" style={{
       boxShadow: '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
     }}>
       <div className={'mt-3 px-4 bg-white'}>

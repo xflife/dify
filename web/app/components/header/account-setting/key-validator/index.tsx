@@ -75,7 +75,7 @@ const KeyValidator = ({
   }
 
   return (
-    <div className='mb-2 border-[0.5px] border-[#F1F3F9] bg-gray-50 rounded-md'>
+    <div className='mb-2 border-[0.5px] border-gray-200 bg-gray-50 rounded-md'>
       <div className={
         `flex items-center justify-between px-4 h-[52px] cursor-pointer ${isOpen && 'border-b-[0.5px] border-b-gray-200'}`
       }>
